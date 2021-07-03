@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', "Login")
 @section('content')
 <div class="content-login">
     <div class="logo-login" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-easing="ease-in-out">
