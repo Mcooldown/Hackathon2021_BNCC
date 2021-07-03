@@ -9,6 +9,6 @@ class Consultation extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'category_name'
+        'start_time', 'end_time', 'price', 'transfer_proof', 'is_eligible', 'user_id', 'ota_id',
     ];
 }

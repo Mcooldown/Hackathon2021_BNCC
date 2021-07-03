@@ -18,6 +18,8 @@ class CreateConsultationsTable extends Migration
             $table->string('start_time');
             $table->string('end_time');
             $table->integer('price');
+            $table->string('transfer_proof');
+            $table->integer('is_eligible');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('ota_id');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
