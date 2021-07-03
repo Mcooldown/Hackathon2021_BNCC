@@ -11,7 +11,11 @@ class Room extends Model
         'accomodation_id','type','photo','description','slot','price',
     ];
 
+<<<<<<< HEAD
     public function accomodation(){
+=======
+    public function acomodation(){
+>>>>>>> df0de32fb47539a24240a469982f83416ea129fc
         return $this->belongsTo(Accomodation::class,'accomodation_id');
     }
 }
