@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'History')
 @section('content')
 <table>
     @foreach ($historys as $history)
