@@ -8,8 +8,8 @@
             </div>
             <div class="col-md-9">
                 <div class="card border-0 shadow">
-                    <div class="card-body my-3">
-                        <h3>My Bookings</h3>
+                    <div class="card-body my-3 heading-booking">
+                        <h3 class="fw-bold ">My Bookings</h3>
                         <hr>
                         @foreach ($bookings as $booking)
                             <div class="card my-2">
@@ -36,7 +36,7 @@
                                                 <p class="text-success">Already checkout</p>
                                             @else
                                                 <a href="{{ route('checkouts.create', $booking) }}"
-                                                    class="btn btn-primary">Checkout</a>
+                                                    class="btn btn-hijau">Checkout</a>
                                             @endif
                                         </div>
                                     </div>
