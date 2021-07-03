@@ -13,24 +13,24 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="/storage/assets/bg.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-md-block marginHome">
+                {{-- <div class="carousel-caption d-md-block marginHome">
                     <h5>First slide label</h5>
                     <p>Some representative placeholder content for the first slide.</p>
-                </div>
+                </div> --}}
             </div>
             <div class="carousel-item">
                 <img src="/storage/assets/bg2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-md-block marginHome">
+                {{-- <div class="carousel-caption d-md-block marginHome">
                     <h5>Second slide label</h5>
                     <p>Some representative placeholder content for the second slide.</p>
-                </div>
+                </div> --}}
             </div>
             <div class="carousel-item">
                 <img src="/storage/assets/bg3.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-md-block marginHome">
+                {{-- <div class="carousel-caption d-md-block marginHome">
                     <h5>Third slide label</h5>
                     <p>Some representative placeholder content for the third slide.</p>
-                </div>
+                </div> --}}
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -100,14 +100,14 @@
         <div class="section-right">
             <h2>Staycation?</h2>
             <p>NginepKuy! present in the midst of the COVID-19 pandemic that provides
-            unique lodging in the form of villas, apartments, glamping, etc.</p>
+                unique lodging in the form of villas, apartments, glamping, etc.</p>
         </div>
     </div>
     <div class="more-section">
         <div class="section-right">
             <h2>Staycation?</h2>
             <p>NginepKuy! present in the midst of the COVID-19 pandemic that provides
-            unique lodging in the form of villas, apartments, glamping, etc.</p>
+                unique lodging in the form of villas, apartments, glamping, etc.</p>
         </div>
         <div class="section-left">
             <img src="/storage/assets/undraw2.svg" alt="" width="400px">

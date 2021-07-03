@@ -19,7 +19,6 @@ class CategorySeeder extends Seeder
                 'category_name' => 'Villa',
             ],
             [
-
                 'category_name' => 'Apartment',
             ],
             [
