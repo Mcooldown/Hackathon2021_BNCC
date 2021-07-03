@@ -1,28 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Login')
 @section('content')
-<<<<<<< HEAD
-<div class="content-login">
-    <div class="logo-login" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-easing="ease-in-out">
-        <a href="#">
-            <img src="/storage/assets/logo1.png" alt="" width="250px">
-            <p>Your Safety is our Priority</p>
-        </a>
-    </div>
-    <div class="content-wraper-login card border-0 shadow mt-3 ">
-        <div class="card-body my-3">
-            <form method="GET">
-            <div class="login-form">
-                <div class="wraping-form">
-                    <label for="username"><b>Email :</b></label>
-                    <p>
-                        <input type="Email" name="email" id="email" placeholder="Email">
-                    </p>
-                    <label for="password"><b>Password :</b></label>
-                    <p>
-                        <input type="password" name="password" id="password" placeholder="Password">
-                    </p>
-=======
     <div class="container my-5 py-5">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-5">
@@ -31,7 +9,6 @@
                         <img src="/storage/assets/logo1.png" alt="" width="300px">
                         <p>Your Safety is our Priority</p>
                     </a>
->>>>>>> 1a82bbd39502488cb4f1d774cf8b1c762c0a7aa1
                 </div>
             </div>
             <div class="col-md-5">
