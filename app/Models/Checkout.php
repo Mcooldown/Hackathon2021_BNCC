@@ -10,11 +10,16 @@ class Checkout extends Model
     use HasFactory;
 
     protected $fillable = [
-        'booking_id', 'total_payment'
+        'booking_id', 'total_payment', 'user_id'
     ];
 
     public function booking()
     {
         return $this->belongsTo(Booking::class, 'booking_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
