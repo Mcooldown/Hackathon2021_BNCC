@@ -1,13 +1,13 @@
-html{
+html {
     margin: 0;
     padding: 0;
 }
 
-.navbar{
+.navbar {
     background-color: transparent!important;
 }
 
-.all-link a{
+.all-link a {
     padding: 5px;
     /* background-color: white; */
     border-radius: 20px;
@@ -15,7 +15,7 @@ html{
     text-align: center;
 }
 
-.all-link li a{
+.all-link li a {
     padding: 5px;
     border: 1px black solid;
     /* background-color: red; */
@@ -24,22 +24,22 @@ html{
     text-align: center;
 }
 
-.marginHome{
+.marginHome {
     margin-bottom: 600px !important;
 }
 
-.landing{
+.landing {
     min-height: 50vh;
     height: 50vh;
     background: #00e2a7 center;
     clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
 }
 
-.social{
+.social {
     display: flex;
 }
 
-.social a{
+.social a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +53,7 @@ html{
     color: black;
 }
 
-.pick-date{
+.pick-date {
     position: absolute;
     width: 100%;
     top: 20;
@@ -61,44 +61,43 @@ html{
     margin: -150px auto 0 auto;
 }
 
-.check-wrap{
+.check-wrap {
     align-items: center;
     height: 50vh;
     border-radius: 50px;
     width: 50vw;
 }
 
-.check-wrap input{
+.check-wrap input {
     width: 200px;
 }
 
-.check-wrap h1{
+.check-wrap h1 {
     margin-top: 10px;
     padding-bottom: 15px;
     text-align: center;
     font-size: 2rem;
 }
 
-.form-search{
+.form-search {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.line1{
+.line1 {
     margin-bottom: 20px;
 }
 
-.line2{
+.line2 {
     margin-bottom: 35px;
 }
 
-
-footer{
+footer {
     background-color: gray;
 }
 
-.footer-wrap{
+.footer-wrap {
     text-align: center;
     display: flex;
     justify-content: space-evenly;
@@ -110,46 +109,46 @@ footer{
     height: 50vh;
 }
 
-.footer-section{
+.footer-section {
     padding: 10px;
 }
 
-.footer-logo{
+.footer-logo {
     font-size: 3rem;
     font-weight: bold;
 }
 
-.footer-wrapper-inside{
+.footer-wrapper-inside {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.login-div{
+.login-div {
     margin: 100px 0;
 }
 
-.register-div{
+.register-div {
     margin: 100px 0;
 }
 
-.city-list{
+.city-list {
     width: 200px;
 }
 
-.booking-item{
+.booking-item {
     margin: 0 9px;
 }
 
-.search-city{
+.search-city {
     border-radius: 20px;
 }
 
-.search-city input{
+.search-city input {
     justify-content: center;
 }
 
-.search-city-submit{
+.search-city-submit {
     color: white;
     width: 100px;
     height: 40px;
@@ -160,6 +159,16 @@ footer{
     border: none;
 }
 
-.more-section{
-    height: 130vh;
+.pisah {
+    margin-top: 50vh;
+}
+
+.more-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35vh;
+}
+
+.section-right {
+    width: 400px;
 }

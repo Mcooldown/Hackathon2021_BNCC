@@ -15,10 +15,10 @@ class CreateConsultationsTable extends Migration
     {
         Schema::create('consultations', function (Blueprint $table) {
             $table->id();
-            $table->string('start_time');
-            $table->string('end_time');
+            $table->string('start_time')->nullable();
+            $table->string('end_time')->nullable();
             $table->integer('price');
-            $table->string('transfer_proof');
+            $table->string('transfer_proof')->nullable();
             $table->integer('is_eligible');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('ota_id');
