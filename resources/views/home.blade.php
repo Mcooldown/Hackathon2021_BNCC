@@ -93,5 +93,4 @@
         </div>
     </div>
     <div class="about"></div>
-
 @endsection
