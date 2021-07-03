@@ -8,7 +8,7 @@
             <p>Your Safety is our Priority</p>
         </a>
     </div>
-    <div class="content-wraper-login card border-0 shadow mt-3 " data-aos="zoom-in-left">
+    <div class="content-wraper-login card border-0 shadow mt-3 ">
         <div class="card-body my-3">
             <form method="GET">
             <div class="login-form">
