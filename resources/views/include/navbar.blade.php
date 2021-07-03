@@ -12,7 +12,7 @@
                 <a class="nav-link" href="#">Travel Agent</a>
                 @auth
                     @if (Auth::user()->role == 'ADMIN')
-                    <a class="nav-link" href="{{ route('accomodation.show') }}">Accomodation</a>
+                        <a class="nav-link" href="{{ route('accomodation.show') }}">Accomodation</a>
                     @endif
                 @endauth
 
@@ -37,11 +37,11 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('bookings.index') }}">
-                                {{ __('Bookings') }}
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                {{ __('Dashboard') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
+                                                document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
