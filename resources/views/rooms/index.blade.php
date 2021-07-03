@@ -40,7 +40,7 @@
                             echo $total/$ratings->count()."/5";
                             }
                             else {
-                            echo "4.9"
+                            echo "4.9";
                             }
                             @endphp
                         </h4>
