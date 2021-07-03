@@ -20,14 +20,16 @@ class AccomodationSeeder extends Seeder
                 'category_id' => 1,
                 'photo' => 'villa_abc.jpg',
                 'city' => 'Jakarta',
-                'address' => 'Jalan Sejahtera No.2'
+                'address' => 'Jalan Sejahtera No.2',
+                'health_protocol_fee' => 100000,
             ],
             [
                 'name' => 'ABC Apartement',
                 'category_id' => 2,
                 'photo' => 'abc_apartement.jpg',
                 'city' => 'Jakarta',
-                'address' => 'Jalan Sejahtera No.50'
+                'address' => 'Jalan Sejahtera No.50',
+                'health_protocol_fee' => 150000,
             ],
             [
                 'name' => 'ABC Glamping',
@@ -35,6 +37,7 @@ class AccomodationSeeder extends Seeder
                 'photo' => 'abc_glamping.jpg',
                 'city' => 'Bogor',
                 'address' => 'Jalan Raya Puncak Gunung No.2000',
+                'health_protocol_fee' => 200000,
             ]
         ]);
     }
