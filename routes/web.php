@@ -7,6 +7,7 @@ use App\Http\Controllers\CheckoutController;
 
 use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RoomController;
 
 /*
@@ -44,3 +45,7 @@ Route::get('/checkouts', [CheckoutController::class, 'index'])->name('checkouts.
 Route::get('/checkouts/{booking}', [CheckoutController::class, 'create'])->name('checkouts.create');
 Route::post('/checkouts', [CheckoutController::class, 'store'])->name('checkouts.store');
 Route::get('/history', [CheckoutController::class, 'history']);
+
+//Rating
+Route::get('/ratings',[RatingController::class,'index'])->name('ratings.index');
+Route::post('/ratings/createRating',[RatingController::class,'store'])->name('storeRating');
