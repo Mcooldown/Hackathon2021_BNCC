@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-    <div class="container-fluid">
+    <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}"><img src="/storage/assets/logo2.png" alt=""
                 width="180px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -31,9 +31,11 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                                                                     document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" href="{{ route('bookings.index') }}">
+                                {{ __('Bookings') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
