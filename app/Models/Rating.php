@@ -13,7 +13,7 @@ class Rating extends Model
         'star','comment','accomodation_id'
     ];
 
-    public function acomodation(){
-        return $this->hasMany(Acomodation::class,'accomodation_id');
+    public function accomodation(){
+        return $this->hasMany(Accomodation::class,'accomodation_id');
     }
 }
