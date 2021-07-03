@@ -2,39 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Checkout;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class CheckoutController extends Controller
 {
-    public function checkout(Request $request){
-        $book = Booking::find($request->booking_id);
-        $payment = $book->room()->price;
-        $payment = $payment * $book->quantity;
+    public function create(Booking $booking)
+    {
 
-        // $cin = date_create('10/16/2003');
-        // $cout = date_create('11/16/2003');
-        // $payment = date_diff($cin,$cout);
-        // dd($payment);
-
-        $cin = date_create($book->check_in);
-        $cout = date_create($book->check_out);
-
-        $payment *= date_diff($cin,$cout);
-
-        Checkout::create([
-            'booking_id' => $request->booking_id,
-            'total_payment' => $payment,
-            'user_id'=> Auth::user()->id
-        ]);
         return redirect('/home');
     }
 
-    public function history(){
-        $historys = Checkout::where('user_id',Auth::user()->id)->get();
+    public function store()
+    {
+        $booking = Booking::find(request('booking_id'));
+        $day = intval(round((strtotime($booking->check_out) - strtotime($booking->check_in)) / (60 * 60 * 24)));
+        $totalPayment = $booking->room->price * $booking->quantity * $day;
 
-        return view('checkout.history',compact('historys'));
+        if (request()->payment_type == 'BAL') {
+            User::find(auth()->user()->id)->update([
+                'balance' => auth()->user()->balance - $totalPayment,
+            ]);
+        } else {
+        }
+    }
+
+    public function history()
+    {
+        $historys = Checkout::where('user_id', Auth::user()->id)->get();
+
+        return view('checkout.history', compact('historys'));
     }
 }
