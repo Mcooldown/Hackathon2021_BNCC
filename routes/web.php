@@ -29,11 +29,15 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/accomodations', [AccomodationController::class, 'index'])->name('accomodations.index');
 Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);
 Route::post('/accomodations/createAccomodation', [AccomodationController::class, 'store'])->name('storeAccomodation');
+Route::get('/accomodations/show',[AccomodationController::class,'show'])->name('accomodation.show');
+Route::get('/accomodations/delete{id}',[AccomodationController::class,'delete'])->name('accomodation.delete');
 
 //Room
 Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
 Route::get('/rooms/create', [RoomController::class, 'indexCreate']);
 Route::post('/rooms/createRoom', [RoomController::class, 'create'])->name('createRoom');
+Route::get('/rooms/show', [RoomController::class, 'show'])->name('rooms.show');
+
 
 // Booking
 Route::get('/bookings', [BookingController::class, 'index'])->name('bookings.index');

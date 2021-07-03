@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Accomodation;
 use App\Models\City;
+use App\Models\Room;
+use Illuminate\Support\Facades\Storage;
 
 class AccomodationController extends Controller
 {
@@ -42,6 +44,12 @@ class AccomodationController extends Controller
         return view('accomodation.create');
     }
 
+    public function show(Request $request){
+
+        $accomodations = Accomodation::all();
+        return view('accomodation.show',compact('accomodations'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -66,5 +74,13 @@ class AccomodationController extends Controller
 
 
         return redirect('/');
+    }
+
+    public function delete($id){
+        $accomodation = Accomodation::find($id);
+        Storage::delete($accomodation->photo);
+        $accomodation->delete();
+
+        return redirect()->back();
     }
 }

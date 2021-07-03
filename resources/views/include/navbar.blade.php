@@ -10,6 +10,10 @@
             <div class="navbar-nav ms-auto">
                 <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                 <a class="nav-link" href="#">Travel Agent</a>
+                @if (Auth::user()->role == 'ADMIN')
+                <a class="nav-link" href="{{ route('accomodation.show') }}">Accomodation</a>
+                @endif
+
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">

@@ -2,16 +2,10 @@
 @section('title', "Result")
 @section('content')
     <div class="container py-5">
-
         <div class="header-accomodation">
-            <h1>Accomodation in {{ $city->name }}, {{ $city->country }}</h1>
-            <div class="d-flex justify-content-between">
-                <p>{{ $_GET['qty'] }} Rooms - {{ count($accomodations) }} accomodations found</p>
-                <p class="">Date : {{ date('d-m-Y', $check_in) }} - {{ date('d-m-Y', $check_out) }}</p>
-            </div>
-        </div>
+            <h1>Accomodation List</h1>
 
-        <hr>
+        </div>
         @foreach ($accomodations as $accomodation)
             <div class="card my-3 mb-4 ">
                 <div class="card-body px-5">
@@ -25,10 +19,12 @@
                         </div>
                         <div class="col-md-3 text-end">
                             <h4>Rp {{ number_format($accomodation->cheaperRoom->price) }}</h4>
-
-                            <a class="btn btn-hijau "
-                                href="{{ route('rooms.index', ['qty' => $_GET['qty'], 'accomodation_id' => $accomodation->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">CHOOSE</a>
-
+                            @if (Auth::user()->role == 'ADMIN')
+                            <a class="btn btn-warning "
+                                href="">EDIT</a>
+                                <a class="btn btn-danger "
+                                href="/accomodations/delete{{$accomodation->id}}">DELETE</a>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -56,6 +56,14 @@ class RoomController extends Controller
         return redirect('/rooms');
     }
 
+
+    public function show()
+    {
+        $accomodation = Accomodation::find($_GET['accomodation_id']);
+        $rooms = Room::where('accomodation_id', $_GET['accomodation_id'])->get();
+        return view('rooms.show', compact('rooms', 'accomodation'));
+    }
+
     public function edit($id)
     {
         $rooms = Room::find($id);

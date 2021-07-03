@@ -1,4 +1,6 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.app')
+@section('title', "Create Accomodation")
+@section('content')
 <form action="{{ route('createRoom') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <label for="accomodation_id">Accomodation ID</label>
