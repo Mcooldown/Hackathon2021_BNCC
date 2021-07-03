@@ -15,6 +15,17 @@
                         <p>Type: {{ $accomodation->category->category_name }}</p>
                         <p>{{ $accomodation->city->name }}, {{ $accomodation->city->country }}</p>
                         <p>{{ $accomodation->address }}</p>
+                        @php
+                            $total=0;
+                        @endphp
+                        @foreach ($ratings as $rating)
+                            @php
+                                $total+=$rating->star
+                            @endphp
+                        @endforeach
+                        @php
+                            echo $total/$ratings->count();
+                        @endphp
                     </div>
                 </div>
             </div>
