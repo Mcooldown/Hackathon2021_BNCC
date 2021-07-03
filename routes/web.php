@@ -18,25 +18,23 @@ use App\Http\Controllers\RoomController;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/accomodations/{city_id}/{qty}', [AccomodationController::class, 'index']);
-Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Accomodations
+Route::get('/accomodations', [AccomodationController::class, 'index'])->name('accomodations.index');
+Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);
 Route::post('/accomodations/createAccomodation', [AccomodationController::class, 'store'])->name('storeAccomodation');
 
-
 //Room
-Route::get('/rooms', [RoomController::class, 'index']);
+Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
 Route::get('/rooms/create', [RoomController::class, 'indexCreate']);
 Route::post('/rooms/createRoom', [RoomController::class, 'create'])->name('createRoom');
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+// Booking
 Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
-
-Route::get('/rooms/{accomodation}/{qty}', [RoomController::class, 'index'])->name('rooms.index');
+Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');

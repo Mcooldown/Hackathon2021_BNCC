@@ -4,7 +4,9 @@
     <div class="container py-5">
 
         <h1>Accomodation in {{ $city->name }}, {{ $city->country }}</h1>
+        <p>{{ date('d-m-Y', $check_in) }} - {{ date('d-m-Y', $check_out) }}</p>
         <p>{{ $qty }} Rooms</p>
+
         <p>{{ count($accomodations) }} accomodations found</p>
         <hr>
         @foreach ($accomodations as $accomodation)
@@ -21,23 +23,11 @@
                         <div class="col-md-3">
                             <h3>Rp{{ $accomodation->cheaperRoom->price }}</h3>
                             <a class="btn btn-primary"
-                                href="{{ route('rooms.index', ['qty' => $qty, 'accomodation' => $accomodation]) }}">CHOOSE</a>
+                                href="{{ route('rooms.index', ['qty' => $qty, 'accomodation_id' => $accomodation->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">CHOOSE</a>
                         </div>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
-
-    {{-- <table>
-        @foreach ($accomodations as $accomodation)
-            <tr>
-                {{ $accomodation->name }}
-                {{ $accomodation->category_id }}
-                {{ $accomodation->city }}
-                {{ $accomodation->address }}
-            </tr>
-            <br>
-        @endforeach
-    </table> --}}
 @endsection

@@ -12,10 +12,15 @@ use Illuminate\Support\Facades\Validator;
 class RoomController extends Controller
 {
 
-    public function index(Accomodation $accomodation, $qty)
+    public function index()
     {
-        $rooms = Room::where('accomodation_id', $accomodation->id)->get();
-        return view('rooms.index', compact('accomodation', 'qty'));
+        $qty = $_GET['qty'];
+        $check_in = $_GET['check_in'];
+        $check_out = $_GET['check_out'];
+        $accomodation = Accomodation::find($_GET['accomodation_id']);
+        $rooms = Room::where('accomodation_id', $_GET['accomodation_id'])->get();
+
+        return view('rooms.index', compact('rooms', 'accomodation', 'qty', 'check_in', 'check_out'));
     }
 
     //Accomodation Id harus di lempar"

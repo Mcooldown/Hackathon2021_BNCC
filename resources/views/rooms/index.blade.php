@@ -2,25 +2,43 @@
 
 @section('content')
     <div class="container py-5">
-
-        <h1> in {{ $city->name }}, {{ $city->country }}</h1>
-        <p>{{ $qty }} Rooms</p>
-        <p>{{ count($accomodations) }} accomodations found</p>
+        <a class="btn btn-primary"
+            href="{{ route('accomodations.index', ['qty' => $qty, 'city_id' => $accomodation->city->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Back
+            to
+            accomodations</a>
+        <div class="card my-2">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="/storage/images/{{ $accomodation->photo }}" width="100%" alt="">
+                    </div>
+                    <div class="col-md-10">
+                        <h3>{{ $accomodation->name }}</h3>
+                        <p>Type: {{ $accomodation->category->category_name }}</p>
+                        <p>{{ $accomodation->city->name }}, {{ $accomodation->city->country }}</p>
+                        <p>{{ $accomodation->address }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <hr>
-        @foreach ($accomodations as $accomodation)
+        <h2>Rooms</h2>
+        @foreach ($rooms as $room)
             <div class="card my-2">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img src="/storage/images/{{ $accomodation->photo }}" width="100%" alt="">
+                            <img src="/storage/images/{{ $room->photo }}" width="100%" alt="">
                         </div>
                         <div class="col-md-7">
-                            <h3>{{ $accomodation->name }}</h3>
-                            <p>{{ $accomodation->category->category_name }}</p>
+                            <h3>{{ $room->type }}</h3>
+                            <h5>Rp{{ $room->price }}</h5>
+                            <p>{{ $room->description }}</p>
                         </div>
                         <div class="col-md-3">
-                            <h3>Rp{{ $accomodation->cheaperRoom->price }}</h3>
-                            <a href="{{ route('bookings.create') }}"></a>
+                            <a class="btn btn-primary"
+                                href="{{ route('bookings.create', ['qty' => $qty, 'room_id' => $room->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">BOOK
+                                THIS NOW</a>
                         </div>
                     </div>
                 </div>
@@ -29,12 +47,12 @@
     </div>
 
     {{-- <table>
-        @foreach ($accomodations as $accomodation)
+        @foreach ($rooms as $room)
             <tr>
-                {{ $accomodation->name }}
-                {{ $accomodation->category_id }}
-                {{ $accomodation->city }}
-                {{ $accomodation->address }}
+                {{ $room->name }}
+                {{ $room->category_id }}
+                {{ $room->city }}
+                {{ $room->address }}
             </tr>
             <br>
         @endforeach
