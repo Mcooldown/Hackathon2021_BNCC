@@ -10,6 +10,7 @@
 
     <div class="pick-date">
         <form method="GET" action="{{ route('accomodations.index') }}" class="form-search">
+
             <div class="check-wrap">
                 <h1>Booking Now</h1>
                 <div class="d-flex justify-content-center line1">
