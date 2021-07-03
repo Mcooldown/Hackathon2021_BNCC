@@ -6,6 +6,8 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CheckoutController;
 
 use App\Http\Controllers\AccomodationController;
+use App\Http\Controllers\ChatConsultationController;
+use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
 
@@ -23,6 +25,7 @@ use App\Http\Controllers\RoomController;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
 // Accomodations
 Route::get('/accomodations', [AccomodationController::class, 'index'])->name('accomodations.index');
@@ -44,3 +47,14 @@ Route::get('/checkouts', [CheckoutController::class, 'index'])->name('checkouts.
 Route::get('/checkouts/{booking}', [CheckoutController::class, 'create'])->name('checkouts.create');
 Route::post('/checkouts', [CheckoutController::class, 'store'])->name('checkouts.store');
 Route::get('/history', [CheckoutController::class, 'history']);
+
+// Consultation
+Route::get('/consultations', [ConsultationController::class, 'index'])->name('consultations.index');
+Route::get('/consultations/{consultant}', [ConsultationController::class, 'create'])->name('consultations.create');
+Route::post('/consultations', [ConsultationController::class, 'store'])->name('consultations.store');
+
+// Chat Consultation
+Route::get('/chat-consultations', [ChatConsultationController::class, 'index'])->name('chat-consultations.index');
+Route::get('/chat-consultations/{consultation}', [ChatConsultationController::class, 'show'])->name('chat-consultations.show');
+Route::post('/chat-consultations', [ChatConsultationController::class, 'store'])->name('chat-consultations.store');
+Route::get('/chat-consultations-ota', [ChatConsultationController::class, 'otaIndex'])->name('chat-consultations.ota');

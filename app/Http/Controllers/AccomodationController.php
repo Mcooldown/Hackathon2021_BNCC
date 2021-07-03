@@ -16,24 +16,25 @@ class AccomodationController extends Controller
         $check_out = strtotime($_GET['check_out']);
         $qty = $_GET['qty'];
 
-        if($check_in >= $check_out){
-            return back()->with('error', 'Check in cannot be more than Check out');
+        if ($check_in >= $check_out) {
+            return back()->with('error', 'Check-in date must before check-out date');
         }
-        if($accomodations->count() == 0){
-            return back()->with('error', 'accomodation cannot be null');
+        if ($accomodations->count() == 0) {
+            return back()->with('error', 'Accomodation not found');
         }
-        if($city == null){
-            return back()->with('error', 'city cannot be null');
+        if ($city == null) {
+            return back()->with('error', 'Please select the city');
         }
-        if($check_in == null){
-            return back()->with('error', 'check in date cannot be null');
+        if ($check_in == null) {
+            return back()->with('error', 'Please select your check-in date');
         }
-        if($check_out == null){
-            return back()->with('error', 'check out date cannot be null');
+        if ($check_out == null) {
+            return back()->with('error', 'Please select your check-out date');
         }
-        if($qty == null||$qty == 0){
-            return back()->with('error', 'Rooms cannot be null');
+        if ($qty == null || $qty == 0) {
+            return back()->with('error', 'Please select your reserved room quantity');
         }
+
         return view('accomodation.index', compact('accomodations', 'city', 'check_in', 'check_out'));
     }
 

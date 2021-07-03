@@ -11,4 +11,14 @@ class Consultation extends Model
     protected $fillable = [
         'start_time', 'end_time', 'price', 'transfer_proof', 'is_eligible', 'user_id', 'ota_id',
     ];
+
+    public function ota()
+    {
+        return $this->belongsTo(User::class, 'ota_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

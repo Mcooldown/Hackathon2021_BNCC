@@ -27,4 +27,9 @@ class HomeController extends Controller
         $cities = City::all();
         return view('home', compact('cities'));
     }
+
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
 }

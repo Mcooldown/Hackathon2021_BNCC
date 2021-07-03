@@ -1,37 +1,23 @@
 @extends('layouts.app')
 
-
-@section('title', 'Checkout Transaction')
+@section('title', 'Travel Agent Payment - NginepKuy')
 @section('content')
-    <div class="container py-5 my-5">
-        <input type="hidden" name="booking_id" value="{{ $booking->id }}">
-        <input type="hidden" name="day" value="{{ $day }}">
-        <div class="card my-2">
-            <div class="card-body">
+    <div class="container my-5">
+        <div class="card border-0 shadow my-2 px-2 rounded-30">
+            <div class="card-body my-2">
+                <h3 class="fw-bold text-teal">Payment Summary</h3>
+                <hr>
                 <div class="row">
-                    <div class="col-md-3">
-                        <img src="/storage/images/{{ $booking->room->photo }}" width="100%" alt="">
-                    </div>
-                    <div class="col-md-6">
-                        <h3>{{ $booking->room->type }} - {{ $booking->room->accomodation->name }}</h3>
-                        <p>{{ $booking->room->accomodation->address }} |
-                            {{ $booking->room->accomodation->city->name }},
-                            {{ $booking->room->accomodation->city->country }}</p>
-                        <p>{{ $booking->room->description }}</p>
-                        <hr>
-                        <p>Check-in: {{ $booking->check_in }} <br>
-                            Check-out: {{ $booking->check_out }}
+                    <div class="col-md-8">
+                        <h3>{{ $consultant->name }}</h3>
+                        <p>{{ $consultant->ota_name }}</p>
+                        <p>Price: Rp100.000 <br>
+                            Duration: 1 hour
                         </p>
-                        <p>Room Quantity: {{ $booking->quantity }}</p>
-                        <p>Total Day: {{ $day }}</p>
                     </div>
-                    <div class="col-md-3">
-                        <p>Room Price: Rp{{ $booking->room->price * $booking->quantity * $day }}</p>
-                        <p>Health Protocol Fee (per room):
-                            Rp{{ $booking->room->accomodation->health_protocol_fee }} x {{ $booking->quantity }}
-                        </p>
+                    <div class="col-md-4 d-flex align-items-end justify-content-end">
                         <h5>Grand Total:
-                            Rp{{ $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity }}
+                            Rp100.000
                         </h5>
                     </div>
                 </div>
@@ -50,21 +36,19 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body my-4">
-                        <form action="{{ route('checkouts.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('consultations.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="booking_id" value="{{ $booking->id }}">
-                            <input type="hidden" name="day" value="{{ $day }}">
+                            <input type="hidden" name="consultant_id" value="{{ $consultant->id }}">
                             <input type="hidden" name="payment_type" value="BNK">
                             <p>Total Payment:
-                                Rp{{ $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity }}
+                                Rp100.000
                             </p>
                             <p>Transfer to: 3892478923748 a/n Brian</p>
                             <hr>
                             <label for="transfer_proof">Upload your transfer proof</label>
                             <input type="file" class="form-control" name="transfer_proof">
-
                             <div class="d-flex justify-content-end mt-4">
-                                <button type="submit" class="btn btn-lg btn-primary">CHECKOUT</button>
+                                <button type="submit" class="btn btn-lg btn-primary">Checkout</button>
                             </div>
                         </form>
                     </div>
@@ -80,17 +64,16 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body mt-3">
-                        <form action="{{ route('checkouts.store') }}" method="POST">
+                        <form action="{{ route('consultations.store') }}" method="POST">
                             @csrf
-                            <input type="hidden" name="booking_id" value="{{ $booking->id }}">
-                            <input type="hidden" name="day" value="{{ $day }}">
+                            <input type="hidden" name="consultant_id" value="{{ $consultant->id }}">
                             <input type="hidden" name="payment_type" value="BAL">
                             <p>Your Balance: Rp{{ auth()->user()->balance }}</p>
                             <p>Total Payment:
-                                Rp{{ $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity }}
+                                Rp100.000
                             </p>
                             <div class="d-flex justify-content-end">
-                                @if (auth()->user()->balance < $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity)
+                                @if (auth()->user()->balance < 100000)
                                     <h5 class="fw-bold text-danger">Not enough balance</h5>
                                 @else
                                     <button type="submit" class="btn btn-primary">CHECKOUT BY YOUR BALANCE</button>

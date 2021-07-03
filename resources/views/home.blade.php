@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home')
+@section('title', 'NginepKuy')
 @section('content')
     <div id="carouselExampleCaptions" class="carousel slide landing" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -62,7 +62,7 @@
                                         </div>
                                         <div class="my-3">
                                             <label>Check-out</label>
-                                            <input type="date" class="form-control" name="check_in" id="check_in" />
+                                            <input type="date" class="form-control" name="check_out" id="check_out" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">

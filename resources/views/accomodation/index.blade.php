@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', "Result")
+@section('title', 'Accomodation Search - NginepKuy')
 @section('content')
     <div class="container py-5">
 

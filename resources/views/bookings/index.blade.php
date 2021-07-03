@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'View Booking')
+@section('title', 'Bookings - NginepKuy')
 @section('content')
     <div class="container my-5">
         <div class="row">

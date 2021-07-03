@@ -21,6 +21,17 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
+    <style>
+        .rounded-30 {
+            border-radius: 30px;
+        }
+
+        .text-teal {
+            color: #00E1A4;
+        }
+
+    </style>
+
 </head>
 
 <body>
