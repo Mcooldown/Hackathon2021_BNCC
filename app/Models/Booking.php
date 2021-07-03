@@ -20,4 +20,9 @@ class Booking extends Model
     {
         return $this->belongsTo(Room::class, 'room_id');
     }
+
+    public function checkout()
+    {
+        return $this->hasOne(Checkout::class, 'booking_id')->withDefault();
+    }
 }

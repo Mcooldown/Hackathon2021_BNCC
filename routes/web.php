@@ -40,5 +40,7 @@ Route::get('/bookings/create', [BookingController::class, 'create'])->name('book
 Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
 
 // Checkout
+Route::get('/checkouts', [CheckoutController::class, 'index'])->name('checkouts.index');
 Route::get('/checkouts/{booking}', [CheckoutController::class, 'create'])->name('checkouts.create');
+Route::post('/checkouts', [CheckoutController::class, 'store'])->name('checkouts.store');
 Route::get('/history', [CheckoutController::class, 'history']);

@@ -4,24 +4,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-md-3">
-                <div class="card border-0 shadow">
-                    <div class="card-body my-3">
-                        <h3>{{ auth()->user()->name }}</h3>
-                        <p>Balance: Rp{{ auth()->user()->balance }}</p>
-                        <hr>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="{{ route('home') }}">Create New Booking</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('home') }}">My Bookings</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('home') }}">Consultation with Travel Agent</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                @include('include.sidebar')
             </div>
             <div class="col-md-9">
                 <div class="card border-0 shadow">
@@ -49,8 +32,12 @@
                                             </p>
                                         </div>
                                         <div class="col-md-2">
-                                            <a href="{{ route('checkouts.create', $booking) }}"
-                                                class="btn btn-primary">Checkout</a>
+                                            @if ($booking->checkout->id)
+                                                <p class="text-success">Already checkout</p>
+                                            @else
+                                                <a href="{{ route('checkouts.create', $booking) }}"
+                                                    class="btn btn-primary">Checkout</a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

@@ -22,4 +22,9 @@ class Checkout extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function checkout()
+    {
+        return $this->belongsTo(Booking::class, 'booking_id');
+    }
 }
