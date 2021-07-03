@@ -35,6 +35,6 @@ class CheckoutController extends Controller
     public function history(){
         $historys = Checkout::where('user_id',Auth::user()->id)->get();
 
-        return view('checkout.history',compact($historys));
+        return view('checkout.history',compact('historys'));
     }
 }
