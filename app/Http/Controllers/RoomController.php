@@ -26,7 +26,7 @@ class RoomController extends Controller
             return redirect(route('viewHome'))->withErrors($validator)->withInput();
         }
 
-        $path = $request->file('room_photo')->store('assets');
+        $path = $request->file('room_photo')->store('images');
 
         Room::create([
             'accomodation_id' => $request->accomodation_id,
@@ -74,7 +74,7 @@ class RoomController extends Controller
         $room->slot = $request->slot;
         $room->price = $request->price;
         if($request->has('room_photo')){
-            $path=$request->file('room_photo')->store('assets');
+            $path=$request->file('room_photo')->store('images');
             $room->room_photo=$path;
         }else{
             $path=$room->path;
