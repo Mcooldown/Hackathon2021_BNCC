@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Login')
+@section('title', 'Login - NginepKuy')
 @section('content')
     <div class="container my-5 py-5">
         <div class="row justify-content-center align-items-center">

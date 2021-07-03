@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home')
+@section('title', 'NginepKuy')
 @section('content')
     <div id="carouselExampleCaptions" class="carousel slide landing" data-bs-ride="carousel">
         <div class="carousel-indicators">
