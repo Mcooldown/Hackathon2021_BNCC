@@ -8,11 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Accomodation extends Model
 {
     use HasFactory;
-    protected $fillable=[
-        'name','category_id','photo','city','address',
+    protected $fillable = [
+        'name', 'category_id', 'photo', 'city', 'address',
     ];
 
-    public function category(){
-        return $this->belongsTo(Category::class,'category_id');
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function cheaperRoom()
+    {
+        return $this->hasOne(Room::class, 'accomodation_id')->orderBy('price', 'asc')->oldest()->withDefault();
     }
 }
