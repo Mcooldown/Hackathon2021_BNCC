@@ -1,7 +1,7 @@
 <div class="card border-0 shadow">
     <div class="card-body my-3">
         <h3>{{ auth()->user()->name }}</h3>
-        <p>Balance: Rp{{ auth()->user()->balance }}</p>
+        <p>Balance: Rp {{ number_format(auth()->user()->balance) }}</p>
         <hr>
         <ul class="list-unstyled sidebar-style">
             <li>

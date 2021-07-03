@@ -17,7 +17,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img width="100%" src="/storage/images/{{ $checkout->booking->room->photo }}"
+                                            <img width="100%" class="rounded" src="/storage/images/{{ $checkout->booking->room->photo }}"
                                                 alt="">
                                         </div>
                                         <div class="col-md-8">
@@ -29,13 +29,13 @@
                                                 {{ $checkout->booking->room->accomodation->city->country }}</p>
                                             <hr>
                                             <p>{{ $checkout->booking->quantity }} Rooms <br>
-                                                Check-in: {{ $checkout->booking->check_in }} <br>
-                                                Check-out: {{ $checkout->booking->check_out }} <br>
+                                                <b>Check-in: </b>{{ $checkout->booking->check_in }} <br>
+                                                <b>Check-out: </b>{{ $checkout->booking->check_out }} <br>
                                             </p>
                                             <p>
-                                                Transaction Time: {{ $checkout->created_at }} <br>
-                                                Grand Total: Rp{{ $checkout->total_payment }} <br>
-                                                Status:
+                                                <b>Transaction Time: </b>{{ $checkout->created_at }} <br>
+                                                <b>Grand Total: </b>Rp {{ number_format($checkout->total_payment) }} <br>
+                                                <b>Status:</b>
                                                 @if ($checkout->is_success == 1)
                                                     <span class="text-success fw-bold">Success</span>
                                                 @elseif($checkout->is_success == 0)
