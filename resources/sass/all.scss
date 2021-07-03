@@ -24,23 +24,15 @@ html{
     text-align: center;
 }
 
-
-.landing{
-    background-image: url("/storage/assets/bg.jpeg");
-    height: 85vh;
-    background-position: top;
-    background-size: cover;
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.marginHome{
+    margin-bottom: 600px !important;
 }
 
-.landing h2{
-    color: #f0f8ff;
-    font-size: 5rem;
-    margin-bottom: 20px;
+.landing{
+    min-height: 50vh;
+    height: 50vh;
+    background: #00e2a7 center;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
 }
 
 .social{
@@ -62,17 +54,18 @@ html{
 }
 
 .pick-date{
+    position: absolute;
+    width: 100%;
+    top: 20;
     padding: 2% 15%;
-    margin: 70px 0;
+    margin: -150px auto 0 auto;
 }
 
 .check-wrap{
     align-items: center;
-    background-color: #dedede;
     height: 50vh;
     border-radius: 50px;
     width: 50vw;
-    box-shadow: 0px 22px 54px rgba(0, 0, 0, 0.5);
 }
 
 .check-wrap input{
@@ -80,14 +73,10 @@ html{
 }
 
 .check-wrap h1{
-    margin-top: 30px;
+    margin-top: 10px;
+    padding-bottom: 15px;
     text-align: center;
     font-size: 2rem;
-}
-
-.search-city input{
-    justify-content: center;
-    width: 400px;
 }
 
 .form-search{
@@ -96,13 +85,14 @@ html{
     align-items: center;
 }
 
-.line2{
-    margin-top: 10px;
+.line1{
+    margin-bottom: 20px;
 }
 
-.line3{
-    margin-top: 40px;
+.line2{
+    margin-bottom: 35px;
 }
+
 
 footer{
     background-color: gray;
@@ -141,4 +131,35 @@ footer{
 
 .register-div{
     margin: 100px 0;
+}
+
+.city-list{
+    width: 200px;
+}
+
+.booking-item{
+    margin: 0 9px;
+}
+
+.search-city{
+    border-radius: 20px;
+}
+
+.search-city input{
+    justify-content: center;
+}
+
+.search-city-submit{
+    color: white;
+    width: 100px;
+    height: 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #00e2a7 !important;
+    border-radius: 20px;
+    border: none;
+}
+
+.more-section{
+    height: 130vh;
 }

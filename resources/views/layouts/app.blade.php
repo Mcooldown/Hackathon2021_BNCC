@@ -36,7 +36,10 @@
             @yield('content')
         </main>
 
-        @include('include.footer')
+        @if (url()->current() === route('login') || url()->current() === route('register'))
+        @else
+            @include('include.footer')
+        @endif
     </div>
 </body>
 
