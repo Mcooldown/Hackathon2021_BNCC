@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Models\Accomodation;
+use App\Http\Models\Rating;
 
 class AccomodationController extends Controller
 {
@@ -13,7 +14,14 @@ class AccomodationController extends Controller
     }
 
     public function store(Request $request){
-        $path = $request->file('foto_barang')->store('image_assets');
+        $request->validate([
+            'name'=>'required|max:255',
+            'category'=>'required',
+            'city'=>'required|max:255',
+            'address'=>'required',
+        ]);
+
+        $path = $request->file('foto_barang')->store('images');
         Accomodation::create([
             'name' => $request->name,
             'category_id' => $request->category,
@@ -21,5 +29,7 @@ class AccomodationController extends Controller
             'city' => $request->city,
             'address' => $request->address
         ]);
+
+        return redirect('/');
     }
 }
