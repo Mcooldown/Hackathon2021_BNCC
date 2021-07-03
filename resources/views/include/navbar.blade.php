@@ -10,9 +10,9 @@
             <div class="navbar-nav ms-auto">
                 <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                 <a class="nav-link" href="#">Travel Agent</a>
-                @if (Auth::user()->role == 'ADMIN')
-                <a class="nav-link" href="{{ route('accomodation.show') }}">Accomodation</a>
-                @endif
+                {{-- @if (Auth::user()->role == 'ADMIN')
+                    <a class="nav-link" href="{{ route('accomodation.show') }}">Accomodation</a>
+                @endif --}}
 
                 @guest
                     @if (Route::has('login'))
@@ -34,11 +34,11 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('bookings.index') }}">
-                                {{ __('Bookings') }}
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                {{ __('Dashboard') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
+                                            document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 

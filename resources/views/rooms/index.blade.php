@@ -1,86 +1,96 @@
 @extends('layouts.app')
 @section('title', 'Rooms - NginepKuy')
 @section('content')
-    <div class="container py-5">
-        <a class="btn btn-hijau"
-            href="{{ route('accomodations.index', ['qty' => $qty, 'city_id' => $accomodation->city->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Back to accomodations</a>
-        <div class="card my-2">
-            <div class="card-body">
-                <div class="d-flex">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img src="/storage/images/{{ $accomodation->photo }}" width="100%" alt="">
-                        </div>
-                        <div class="col-md-10">
-                            <h3>{{ $accomodation->name }}</h3>
-                            <p>Type: {{ $accomodation->category->category_name }}</p>
-                            <p>{{ $accomodation->city->name }}, {{ $accomodation->city->country }}</p>
-                            <p>{{ $accomodation->address }}</p>
-                        </div>
+    <div class="container py-5 mb-5">
+        <a class="btn btn-hijau btn-lg rounded-pill"
+            href="{{ route('accomodations.index', ['qty' => $qty, 'city_id' => $accomodation->city->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Back
+            to accomodations</a>
+
+        <div class="d-flex justify-content-end">
+            <p class="m-0 text-muted">{{ $_GET['qty'] }} Rooms | Check-in : {{ date('d F Y', $_GET['check_in']) }} |
+                Check-out:
+                {{ date('d F Y', $_GET['check_out']) }}</p>
+        </div>
+        <div class="card border-0 shadow rounded-30 mt-3">
+            <div class="card-body my-3">
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                        <img class="rounded-30" src="/storage/images/{{ $accomodation->photo }}" width="100%" alt="">
                     </div>
-<<<<<<< HEAD
-                    <div class="accomodation-rating">
-                        Rating:
-=======
-                    <div class="col-md-10">
-                        <h3>{{ $accomodation->name }}</h3>
-                        <p>Type: {{ $accomodation->category->category_name }}</p>
-                        <p>{{ $accomodation->city->name }}, {{ $accomodation->city->country }}</p>
-                        <p>{{ $accomodation->address }}</p>
->>>>>>> 88fb8a5899921eaff83f75ae398fc76410527299
-                        @php
-                            $total=0;
-                        @endphp
-                        @foreach ($ratings as $rating)
+                    <div class="col-md-8">
+                        <h6 class="text-muted">{{ $accomodation->category->category_name }}</h6>
+                        <h3 class="text-teal fw-bold">{{ $accomodation->name }}</h3>
+                        <p class="text-muted">{{ $accomodation->address }}, {{ $accomodation->city->name }},
+                            {{ $accomodation->city->country }}
+                        </p>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center">
+                        <h4>
+                            <i class="fa fa-star text-warning" aria-hidden="true"></i>
                             @php
-                                $total+=$rating->star
+                                $total = 0;
                             @endphp
-                        @endforeach
-                        @php
-<<<<<<< HEAD
-                            echo $total/$ratings->count()."/5"
-=======
-                            echo $total/$ratings->count();
->>>>>>> 88fb8a5899921eaff83f75ae398fc76410527299
-                        @endphp
+                            @foreach ($ratings as $rating)
+                                @php
+                                    $total += $rating->star;
+                                @endphp
+                            @endforeach
+                            @php
+                                echo $total / $ratings->count() . '/5';
+                            @endphp
+                        </h4>
                     </div>
                 </div>
             </div>
         </div>
+        <h2 class="fw-bold text-teal mt-5">Available Rooms</h2>
         <hr>
-        <h2>Rooms</h2>
         @foreach ($rooms as $room)
-            <div class="card my-2 mb-4">
+            <div class="card border-0 shadow rounded-30 my-2 mb-4">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img src="/storage/images/{{ $room->photo }}" width="100%" alt="">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 my-3">
+                            <img class="rounded-30" src="/storage/images/{{ $room->photo }}" width="100%" alt="">
                         </div>
-                        <div class="col-md-7">
-                            <h3>{{ $room->type }}</h3>
-                            <h5>Rp{{ number_format($room->price)  }}</h5>
-                            <p>{{ $room->description }}</p>
+                        <div class="col-md-6 my-3">
+                            <h6 class="text-muted">{{ $accomodation->name }}</h6>
+                            <h3 class="text-teal fw-bold">{{ $room->type }}</h3>
+                            <p class="text-muted">{{ $room->description }}</p>
+                            <h5><span class="text-dark fw-bold">Rp{{ number_format($room->price) }}</span> <small>per
+                                    Night</small>
+                            </h5>
                         </div>
-                        <div class="col-md-3 d-flex justify-content-center align-items-center">
-                            <a class="btn btn-hijau"
-                                href="{{ route('bookings.create', ['qty' => $qty, 'room_id' => $room->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">BOOK
-                                THIS NOW</a>
+                        <div class="col-md-3 my-3">
+                            <a class="btn btn-hijau btn-lg rounded-pill px-4"
+                                href="{{ route('bookings.create', ['qty' => $qty, 'room_id' => $room->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Book
+                                This Room</a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+        <h2 class="fw-bold text-teal mt-5">User Reviews</h2>
+        <hr>
+        @foreach ($accomodation->rating as $rating)
+            <div class="card border-0 shadow rounded-30 my-2 mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center ">
+                            <div style="width:100px;height:100px;border-radius:50%;background:black"></div>
+                            <div class="d-block ms-4">
+                                <h5 class="text-teal fw-bold">{{ $rating->user->name }}</h5>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fa fa-star text-warning me-2" aria-hidden="true"></i> {{ $rating->star }}/5
+                                </div>
+                                <p>{{ $rating->comment }}</p>
+                            </div>
+                        </div>
+                        <h6 class="px-2 text-muted">{{ date('d F Y H:i', strtotime($rating->created_at)) }}</h6>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
 
-    {{-- <table>
-        @foreach ($rooms as $room)
-            <tr>
-                {{ $room->name }}
-                {{ $room->category_id }}
-                {{ $room->city }}
-                {{ $room->address }}
-            </tr>
-            <br>
-        @endforeach
-    </table> --}}
+
 @endsection

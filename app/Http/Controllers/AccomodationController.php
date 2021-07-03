@@ -44,10 +44,11 @@ class AccomodationController extends Controller
         return view('accomodation.create');
     }
 
-    public function show(Request $request){
+    public function show(Request $request)
+    {
 
         $accomodations = Accomodation::all();
-        return view('accomodation.show',compact('accomodations'));
+        return view('accomodation.show', compact('accomodations'));
     }
 
     public function store(Request $request)
@@ -76,7 +77,8 @@ class AccomodationController extends Controller
         return redirect('/');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $accomodation = Accomodation::find($id);
         Storage::delete($accomodation->photo);
         $accomodation->delete();
