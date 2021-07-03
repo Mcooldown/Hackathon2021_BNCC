@@ -4,29 +4,36 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Accomodation;
+use App\Models\City;
 use App\Models\Rating;
 
 class AccomodationController extends Controller
 {
-    public function index(){
-        $accomodations = Accomodation::all();
-        return view('accomodation.index', compact('accomodations'));
+    public function index($city_id, $qty)
+    {
+        $accomodations = Accomodation::where('city_id', $city_id)->get();
+        $city = City::find($city_id);
+
+        return view('accomodation.index', compact('accomodations', 'city', 'qty'));
     }
-    public function indexCreate(){
+
+    public function indexCreate()
+    {
         return view('accomodation.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
-            'name'=>'required|max:255',
-            'category'=>'required',
+            'name' => 'required|max:255',
+            'category' => 'required',
             'photo' => 'image|max:10240',
-            'city'=>'required|max:255',
-            'address'=>'required',
+            'city' => 'required|max:255',
+            'address' => 'required',
         ]);
-        $path=null;
+        $path = null;
 
-        if($request->photo){
+        if ($request->photo) {
             $path = $request->file('photo')->store('images');
         }
         Accomodation::create([
@@ -39,6 +46,4 @@ class AccomodationController extends Controller
 
         return redirect('/');
     }
-
-
 }

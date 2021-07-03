@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Accomodation;
 use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,18 +12,25 @@ use Illuminate\Support\Facades\Validator;
 class RoomController extends Controller
 {
 
+    public function index(Accomodation $accomodation, $qty)
+    {
+        $rooms = Room::where('accomodation_id', $accomodation->id)->get();
+        return view('rooms.index', compact('accomodation', 'qty'));
+    }
+
     //Accomodation Id harus di lempar"
-    public function create(Request $request){
+    public function create(Request $request)
+    {
         $data = $request->all();
-        $validator = Validator::make($data,[
+        $validator = Validator::make($data, [
             'accomodation_id' => 'required|integer',
-            'type' =>'required|string',
+            'type' => 'required|string',
             'photo' => 'image|max:10240',
             'description' => 'required|string',
             'slot' => 'required|integer',
             'price' => 'required|integer'
         ]);
-        if($validator->fails()){
+        if ($validator->fails()) {
             return redirect(route('viewHome'))->withErrors($validator)->withInput();
         }
 
@@ -39,29 +47,32 @@ class RoomController extends Controller
         return redirect(route('viewHome'));
     }
 
-    public function show(Request $request){
+    public function show(Request $request)
+    {
         $rooms = Room::paginate(5);
-        $user=Auth::user();
-        return view('show_room',compact('rooms'));
+        $user = Auth::user();
+        return view('show_room', compact('rooms'));
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $rooms = Room::find($id);
-        return view('edit_room',compact('rooms'));
+        return view('edit_room', compact('rooms'));
     }
 
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         $data = $request->all();
-        $validator = Validator::make($data,[
+        $validator = Validator::make($data, [
             'accomodation_id' => 'required|integer',
-            'type' =>'required|string',
+            'type' => 'required|string',
             'photo' => 'image|max:10240',
             'description' => 'required|string',
             'slot' => 'required|integer',
             'price' => 'required|integer'
         ]);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             return redirect('/room/show_room');
         }
 
@@ -73,25 +84,23 @@ class RoomController extends Controller
         $room->description = $request->description;
         $room->slot = $request->slot;
         $room->price = $request->price;
-        if($request->has('room_photo')){
-            $path=$request->file('room_photo')->store('images');
-            $room->room_photo=$path;
-        }else{
-            $path=$room->path;
+        if ($request->has('room_photo')) {
+            $path = $request->file('room_photo')->store('images');
+            $room->room_photo = $path;
+        } else {
+            $path = $room->path;
         }
 
         $room->save();
         return redirect('/room/show_room');
-
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $room = Room::find($id);
         Storage::delete($room->room_photo);
         $room->delete();
 
         return redirect()->back();
     }
-
-
 }
