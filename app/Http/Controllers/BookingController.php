@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Room;
 use Illuminate\Support\Facades\Auth;
+use PDO;
 
 class BookingController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth')->only('create', 'store');
+        $this->middleware('auth');
+    }
+
+    public function index()
+    {
+        $bookings = Booking::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->get();
+        return view('bookings.index', compact('bookings'));
     }
 
     public function create()
@@ -33,6 +40,6 @@ class BookingController extends Controller
             'check_out' => date('d-m-Y', request('check_out')),
         ]);
 
-        return redirect('/')->with('success', 'Booking created');
+        return redirect()->route('bookings.index')->with('success', 'Booking created');
     }
 }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Accomodation;
 use App\Models\City;
-use App\Models\Rating;
 
 class AccomodationController extends Controller
 {
@@ -15,7 +14,26 @@ class AccomodationController extends Controller
         $city = City::find($_GET['city_id']);
         $check_in = strtotime($_GET['check_in']);
         $check_out = strtotime($_GET['check_out']);
+        $qty = $_GET['qty'];
 
+        if($check_in >= $check_out){
+            return back()->with('error', 'Check in cannot be more than Check out');
+        }
+        if($accomodations->count() == 0){
+            return back()->with('error', 'accomodation cannot be null');
+        }
+        if($city == null){
+            return back()->with('error', 'city cannot be null');
+        }
+        if($check_in == null){
+            return back()->with('error', 'check in date cannot be null');
+        }
+        if($check_out == null){
+            return back()->with('error', 'check out date cannot be null');
+        }
+        if($qty == null||$qty == 0){
+            return back()->with('error', 'Rooms cannot be null');
+        }
         return view('accomodation.index', compact('accomodations', 'city', 'check_in', 'check_out'));
     }
 
@@ -45,6 +63,7 @@ class AccomodationController extends Controller
             'city' => $request->city,
             'address' => $request->address
         ]);
+
 
         return redirect('/');
     }

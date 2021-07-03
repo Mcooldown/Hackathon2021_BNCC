@@ -35,9 +35,12 @@ Route::get('/rooms/create', [RoomController::class, 'indexCreate']);
 Route::post('/rooms/createRoom', [RoomController::class, 'create'])->name('createRoom');
 
 // Booking
+Route::get('/bookings', [BookingController::class, 'index'])->name('bookings.index');
 Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
 Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
 
 // Checkout
-Route::get('/checkout', [CheckoutController::class, 'checkout']);
+Route::get('/checkouts', [CheckoutController::class, 'index'])->name('checkouts.index');
+Route::get('/checkouts/{booking}', [CheckoutController::class, 'create'])->name('checkouts.create');
+Route::post('/checkouts', [CheckoutController::class, 'store'])->name('checkouts.store');
 Route::get('/history', [CheckoutController::class, 'history']);

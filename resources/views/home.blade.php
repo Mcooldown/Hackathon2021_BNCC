@@ -42,6 +42,7 @@
 
     <div class="pick-date">
         <form method="GET" action="{{ route('accomodations.index') }}" class="form-search">
+<<<<<<< HEAD
             <div class="card border-0 shadow mt-3 check-wrap">
                 <div class="card-body my-3">
                     <h1>Booking Now</h1>
@@ -54,6 +55,15 @@
                             <label>Check Out Date</label>
                             <input type="date" class="form-control" name="check_out" id="check_out" />
                         </div>
+=======
+
+            <div class="check-wrap">
+                <h1>Booking Now</h1>
+                <div class="d-flex justify-content-center line1">
+                    <div>
+                        <label>Check In Date</label>
+                        <input type="date" class="form-control" name="check_in" id="check_in" />
+>>>>>>> 1a82bbd39502488cb4f1d774cf8b1c762c0a7aa1
                     </div>
                     <div class="d-flex justify-content-center line2">
                         <div class="search-city justify-content-center city-list booking-item">
