@@ -1,27 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="content-login">
-    <div class="logo-login" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-easing="ease-in-out">
-        <a href="#">
-            <img src="/storage/assets/logo1.png" alt="" width="100%">
-        </a>
+    <div class="content-login">
+        <div class="logo-login" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-easing="ease-in-out">
+            <a href="#">
+                <img src="/storage/assets/logo1.png" alt="" width="100%">
+            </a>
+        </div>
+        <div class="content-wraper-login" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-easing="ease-in-out">
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="login-form">
+                    <label for="username"><b>Email :</b></label>
+                    <input type="Email" name="email" id="email" placeholder="Email">
+                    <label for="password"><b>Password :</b></label>
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </div>
+                <p id="login" class="login-btn"><input type="submit" value="SIGN IN" class="button"></p>
+                <p class="register-btn"><b>Don't have an account?<a href="register.html"> Sign Up </a><b></p>
+            </form>
+        </div>
     </div>
-    <div class="content-wraper-login" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-easing="ease-in-out">
-        <form method="GET">
-            <div class="login-form">
-                <label for="username"><b>Email :</b></label>
-                <input type="Email" name="email" id="email" placeholder="Email">
-                <label for="password"><b>Password :</b></label>
-                <input type="password" name="password" id="password" placeholder="Password">
-            </div>
-            <p id="login" class="login-btn"><input type="button" value="SIGN IN" class="button" onclick="return validateLogin()"></p>
-            <p class="register-btn"><b>Don't have an account?<a href="register.html"> Sign Up </a><b></p>
-        </form>
-    </div>
-</div>
 
-{{-- <div class="container">
+    {{-- <div class="container">
     <div class="row justify-content-center w-auto login-div">
         <div class="col-md-8">
             <div class="card">

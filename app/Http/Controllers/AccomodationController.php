@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Accomodation;
 use App\Models\City;
-use App\Models\Rating;
 
 class AccomodationController extends Controller
 {
