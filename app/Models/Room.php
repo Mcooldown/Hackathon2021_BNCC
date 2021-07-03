@@ -11,7 +11,7 @@ class Room extends Model
         'accomodation_id','type','photo','description','slot','price',
     ];
 
-    public function acomodation(){
+    public function accomodation(){
         return $this->belongsTo(Accomodation::class,'accomodation_id');
     }
 }
