@@ -16,19 +16,29 @@
                         <div class="wraping-form">
                             <label for="username"><b>Email :</b></label>
                             <p>
-                                <input type="Email" name="email" id="email" placeholder="Email">
+                                <input type="Email" class="@error('email') is-invalid @enderror" name="email" id="email"
+                                    placeholder="Email">
                             </p>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             <label for="password"><b>Password :</b></label>
                             <p>
-                                <input type="password" name="password" id="password" placeholder="Password">
+                                <input type="password" class="@error('password') is-invalid @enderror" name="password"
+                                    id="password" placeholder="Password">
                             </p>
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="d-grid">
-                        <p id="save" class="save-btn-register"><input type="submit" value="SIGN IN" class="button"></p>
+                        <p id="save" class="save-btn-register"><input type="submit" value="{{ __('Login') }}"
+                                class="button" onclick="return validateLogin()"></p>
                     </div>
-                    <p class="register-btn"><b>Don't have an account?<a href="register.html"> Sign Up </a><b></p>
-                </form>
             </div>
-        </div>
-    @endsection
+        @endsection
