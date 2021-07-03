@@ -21,6 +21,7 @@ class CreateAccomodationsTable extends Migration
             $table->string('photo')->nullable();
             $table->string('city');
             $table->string('address');
+            $table->integer('health_protocol_fee');
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\BookingController;
 
 use App\Http\Controllers\AccomodationController;
 
@@ -27,3 +28,5 @@ Route::post('/accomodations/createAccomodation', [AccomodationController::class,
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
