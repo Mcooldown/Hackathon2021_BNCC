@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\Validator;
 class RoomController extends Controller
 {
 
+    public function index(){
+        $rooms = Room::all();
+        return view('room.index', compact('rooms'));
+    }
+    public function indexCreate(){
+        return view('room.create');
+    }
+
+
     //Accomodation Id harus di lempar"
     public function create(Request $request){
         $data = $request->all();
@@ -23,10 +32,10 @@ class RoomController extends Controller
             'price' => 'required|integer'
         ]);
         if($validator->fails()){
-            return redirect(route('viewHome'))->withErrors($validator)->withInput();
+            return redirect('/rooms')->withErrors($validator)->withInput();
         }
 
-        $path = $request->file('room_photo')->store('images');
+        $path = $request->file('room_photo')->store('images/public');
 
         Room::create([
             'accomodation_id' => $request->accomodation_id,
@@ -36,7 +45,7 @@ class RoomController extends Controller
             'slot' => $request->slot,
             'price' => $request->price
         ]);
-        return redirect(route('viewHome'));
+        return redirect('/rooms');
     }
 
     public function show(Request $request){
