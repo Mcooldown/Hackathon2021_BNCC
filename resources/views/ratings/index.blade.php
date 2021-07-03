@@ -13,7 +13,7 @@
                     <p>Using our application?</p>
                 </div>
                 <div class="rating">
-                    <select class="form-select" name="rating" id="star">
+                    <select class="form-select" name="star" id="star">
                         <option value="">Choose Rating...</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -24,9 +24,11 @@
                 </div>
 
                 <div class="form-group comment">
-                    <input type="comment" class="form-control" id="comment" aria-describedby="emailHelp" placeholder="Add Comment...">
+                    <input type="comment" class="form-control" id="comment" name="comment" aria-describedby="emailHelp" placeholder="Add Comment...">
                     <small id="emailHelp" class="form-text text-muted comdetail">We'll never share your Comment with anyone else.</small>
                 </div>
+
+                <input type="hidden" name="accomodation_id" value="{{ $_GET['accomodation_id'] }}">
 
                 <div class="d-flex justify-content-center line3 submit">
                     <div class="submit-search-city justify-content-center">
