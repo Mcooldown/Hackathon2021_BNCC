@@ -2,7 +2,7 @@
 @section('title', 'Rooms')
 @section('content')
     <div class="container py-5">
-        <a class="btn btn-primary"
+        <a class="btn btn-hijau"
             href="{{ route('accomodations.index', ['qty' => $qty, 'city_id' => $accomodation->city->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Back
             to
             accomodations</a>
@@ -24,7 +24,7 @@
         <hr>
         <h2>Rooms</h2>
         @foreach ($rooms as $room)
-            <div class="card my-2">
+            <div class="card my-2 mb-4">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-2">
@@ -32,11 +32,11 @@
                         </div>
                         <div class="col-md-7">
                             <h3>{{ $room->type }}</h3>
-                            <h5>Rp{{ $room->price }}</h5>
+                            <h5>Rp{{ number_format($room->price)  }}</h5>
                             <p>{{ $room->description }}</p>
                         </div>
-                        <div class="col-md-3">
-                            <a class="btn btn-primary"
+                        <div class="col-md-3 d-flex justify-content-center align-items-center">
+                            <a class="btn btn-hijau"
                                 href="{{ route('bookings.create', ['qty' => $qty, 'room_id' => $room->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">BOOK
                                 THIS NOW</a>
                         </div>

@@ -1,0 +1,28 @@
+* {
+    font-family: 'Poppins', 'sans';
+}
+
+.header-accomodation {
+    p {
+        font-weight: bold;
+    }
+}
+
+.btn-hijau {
+    background-color: #00E1A4;
+    color: white;
+    font-weight: 600;
+}
+
+.sidebar-style {
+    li {
+        background-color: #00E1A4;
+        padding: 2% 8%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+    }
+}

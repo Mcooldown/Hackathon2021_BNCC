@@ -3,7 +3,7 @@
         <h3>{{ auth()->user()->name }}</h3>
         <p>Balance: Rp{{ auth()->user()->balance }}</p>
         <hr>
-        <ul class="list-unstyled">
+        <ul class="list-unstyled sidebar-style">
             <li>
                 <a href="{{ route('home') }}">Create New Booking</a>
             </li>
