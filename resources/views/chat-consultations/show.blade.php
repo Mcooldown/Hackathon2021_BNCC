@@ -2,6 +2,7 @@
 
 @section('title', 'Chat Consultations - NginepKuy')
 @section('content')
+<meta http-equiv="refresh" content="5">
     <div class="container my-5">
         <div class="row">
             <div class="col-md-3">
@@ -12,12 +13,12 @@
                     <div class="card-body my-3">
                         <h3 class="fw-bold text-teal">Consultation - {{ $consultation->ota->name }}</h3>
                         <hr>
-                        <div class="card mt-2 mb-4" style="width: 100%; height: 300px !important;overflow-y:scroll">
+                        <div class="card mt-2 mb-4" id="chatting-box" style="width: 100%; height: 300px !important;overflow-y:scroll">
                             <div class="card-body">
                                 <div class="text-center text-muted">-- Consultation started --</div>
                                 @foreach ($chatConsultations as $chatConsultation)
                                     <div
-                                        class="d-flex align-items-center 
+                                        class="d-flex align-items-center
                                                                                                                                                                                                                                       {{ $chatConsultation->sender_id == auth()->user()->id ? 'justify-content-end' : '' }} my-2">
                                         <div class="{{ $chatConsultation->sender_id == auth()->user()->id ? 'order-2' : '' }}"
                                             style="border-radius:50%;width: 50px;height:50px;background:black"></div>
@@ -61,4 +62,14 @@
             </div>
         </div>
     </div>
+    <script>
+        var chatbox = document.getElementById("chatting-box");
+        chatbox.scrollTop = chatbox.scrollHeight;
+
+        // function update(){
+        //     $("#chatting-box").load(window.location.href +" #chatting-box");
+        // }
+
+        // setInterval(update(),3000);
+    </script>
 @endsection

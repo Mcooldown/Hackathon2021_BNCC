@@ -11,13 +11,13 @@
                     <div class="col-md-8">
                         <h3>{{ $consultant->name }}</h3>
                         <p>{{ $consultant->ota_name }}</p>
-                        <p>Price: Rp100.000 <br>
+                        <p>Price: Rp40.000 <br>
                             Duration: 1 hour
                         </p>
                     </div>
                     <div class="col-md-4 d-flex align-items-end justify-content-end">
                         <h5>Grand Total:
-                            Rp100.000
+                            Rp40.000
                         </h5>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                             <input type="hidden" name="consultant_id" value="{{ $consultant->id }}">
                             <input type="hidden" name="payment_type" value="BNK">
                             <p>Total Payment:
-                                Rp100.000
+                                Rp40.000
                             </p>
                             <p>Transfer to: 3892478923748 a/n Brian</p>
                             <hr>
@@ -70,7 +70,7 @@
                             <input type="hidden" name="payment_type" value="BAL">
                             <p>Your Balance: Rp{{ auth()->user()->balance }}</p>
                             <p>Total Payment:
-                                Rp100.000
+                                Rp40.000
                             </p>
                             <div class="d-flex justify-content-end">
                                 @if (auth()->user()->balance < 100000)
