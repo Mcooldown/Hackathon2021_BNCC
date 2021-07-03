@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CheckoutController;
 
 use App\Http\Controllers\AccomodationController;
 
@@ -30,3 +31,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
+
+
+Route::get('/checkout', [CheckoutController::class, 'checkout']);
+Route::get('/history', [CheckoutController::class, 'history']);
