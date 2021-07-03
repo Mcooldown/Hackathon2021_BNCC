@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRatingsTable extends Migration
+class CreateBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateRatingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ratings', function (Blueprint $table) {
+        Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->integer('star');
-            $table->text('comment');
-            $table->bigInteger('accomodation_id')->unsigned();
-            $table->foreign('accomodation_id')->references('id')->on('accomodations');
+            $table->foreignId('user_id');
+            $table->string('booking_date');
+            $table->string('check_in');
+            $table->string('check_out');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateRatingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ratings');
+        Schema::dropIfExists('bookings');
     }
 }

@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
     protected $fillable=[
-        'acomodation_id','type','photo','description','slot','price',
+        'accomodation_id','type','photo','description','slot','price',
     ];
 
-    public function acomodation(){
-        return $this->belongsTo(Acomodation::class,'acomodation_id');
+
+    public function accomodation(){
+        return $this->belongsTo(Accomodation::class,'accomodation_id');
     }
 }

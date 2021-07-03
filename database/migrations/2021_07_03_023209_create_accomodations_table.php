@@ -16,8 +16,8 @@ class CreateAccomodationsTable extends Migration
         Schema::create('accomodations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->bigInteger('categoryId')->unsigned();
-            $table->foreign('categoryId')->references('id')->on('categories');
+            $table->bigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->string('photo')->nullable();
             $table->string('city');
             $table->string('address');
