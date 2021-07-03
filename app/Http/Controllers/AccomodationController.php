@@ -13,11 +13,10 @@ class AccomodationController extends Controller
     {
         $accomodations = Accomodation::where('city_id', $_GET['city_id'])->get();
         $city = City::find($_GET['city_id']);
-        $qty = $_GET['qty'];
-        $check_in = strtotime('11-10-2021');
-        $check_out = strtotime('13-10-2021');
+        $check_in = strtotime($_GET['check_in']);
+        $check_out = strtotime($_GET['check_out']);
 
-        return view('accomodation.index', compact('accomodations', 'city', 'qty', 'check_in', 'check_out'));
+        return view('accomodation.index', compact('accomodations', 'city', 'check_in', 'check_out'));
     }
 
     public function indexCreate()

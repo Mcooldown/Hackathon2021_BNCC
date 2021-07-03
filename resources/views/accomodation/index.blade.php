@@ -5,7 +5,7 @@
 
         <h1>Accomodation in {{ $city->name }}, {{ $city->country }}</h1>
         <p>{{ date('d-m-Y', $check_in) }} - {{ date('d-m-Y', $check_out) }}</p>
-        <p>{{ $qty }} Rooms</p>
+        <p>{{ $_GET['qty'] }} Rooms</p>
 
         <p>{{ count($accomodations) }} accomodations found</p>
         <hr>
@@ -23,7 +23,7 @@
                         <div class="col-md-3">
                             <h3>Rp{{ $accomodation->cheaperRoom->price }}</h3>
                             <a class="btn btn-primary"
-                                href="{{ route('rooms.index', ['qty' => $qty, 'accomodation_id' => $accomodation->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">CHOOSE</a>
+                                href="{{ route('rooms.index', ['qty' => $_GET['qty'], 'accomodation_id' => $accomodation->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">CHOOSE</a>
                         </div>
                     </div>
                 </div>
