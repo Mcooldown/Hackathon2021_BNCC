@@ -18,6 +18,11 @@ class RoomController extends Controller
         return view('rooms.index', compact('accomodation', 'qty'));
     }
 
+    public function indexCreate()
+    {
+        return view('rooms.create');
+    }
+
     //Accomodation Id harus di lempar"
     public function create(Request $request)
     {

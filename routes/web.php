@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CheckoutController;
 
 use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\RoomController;
@@ -38,7 +39,6 @@ Route::post('/accomodations/createAccomodation', [AccomodationController::class,
 
 
 //Room
-Route::get('/rooms', [RoomController::class, 'index']);
 Route::get('/rooms/create', [RoomController::class, 'indexCreate']);
 Route::post('/rooms/createRoom', [RoomController::class, 'create'])->name('createRoom');
 
@@ -49,4 +49,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
 
+
+Route::get('/checkout', [CheckoutController::class, 'checkout']);
+Route::get('/history', [CheckoutController::class, 'history']);
 Route::get('/rooms/{accomodation}/{qty}', [RoomController::class, 'index'])->name('rooms.index');
