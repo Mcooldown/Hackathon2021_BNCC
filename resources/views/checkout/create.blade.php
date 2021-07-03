@@ -10,7 +10,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="/storage/images/{{ $booking->room->photo }}" width="100%" alt="">
+                        <img class="rounded" src="/storage/images/{{ $booking->room->photo }}" width="100%" alt="">
                     </div>
                     <div class="col-md-6">
                         <h3>{{ $booking->room->type }} - {{ $booking->room->accomodation->name }}</h3>
@@ -41,7 +41,7 @@
         <hr>
         <div class="accordion mt-3" id="accordionExample">
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
+                <h2 class="accordion-header panel-heading" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                         aria-expanded="true" aria-controls="collapseOne">
                         Bank Transfer
@@ -49,7 +49,7 @@
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
-                    <div class="accordion-body my-4">
+                    <div class="accordion-body my-4 px-5">
                         <form action="{{ route('checkouts.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="booking_id" value="{{ $booking->id }}">
@@ -64,7 +64,7 @@
                             <input type="file" class="form-control" name="transfer_proof">
 
                             <div class="d-flex justify-content-end mt-4">
-                                <button type="submit" class="btn btn-lg btn-primary">CHECKOUT</button>
+                                <button type="submit" class="btn btn-lg btn-hijau">CHECKOUT</button>
                             </div>
                         </form>
                     </div>
@@ -79,7 +79,7 @@
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExample">
-                    <div class="accordion-body mt-3">
+                    <div class="accordion-body mt-3 px-5">
                         <form action="{{ route('checkouts.store') }}" method="POST">
                             @csrf
                             <input type="hidden" name="booking_id" value="{{ $booking->id }}">

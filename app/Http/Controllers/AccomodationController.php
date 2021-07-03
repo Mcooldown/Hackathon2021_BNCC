@@ -16,11 +16,8 @@ class AccomodationController extends Controller
         $check_out = strtotime($_GET['check_out']);
         $qty = $_GET['qty'];
 
-        if ($check_in >= $check_out) {
-            return back()->with('error', 'Check-in date must before check-out date');
-        }
         if ($accomodations->count() == 0) {
-            return back()->with('error', 'Accomodation not found');
+            return back()->with('error', 'there is no accomodation yet');
         }
         if ($city == null) {
             return back()->with('error', 'Please select the city');
@@ -34,7 +31,9 @@ class AccomodationController extends Controller
         if ($qty == null || $qty == 0) {
             return back()->with('error', 'Please select your reserved room quantity');
         }
-
+        if ($check_in >= $check_out) {
+            return back()->with('error', 'Check in cannot be more than Check out');
+        }
         return view('accomodation.index', compact('accomodations', 'city', 'check_in', 'check_out'));
     }
 

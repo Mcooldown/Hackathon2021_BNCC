@@ -9,6 +9,7 @@ use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\ChatConsultationController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RoomController;
 
 /*
@@ -58,3 +59,7 @@ Route::get('/chat-consultations', [ChatConsultationController::class, 'index'])-
 Route::get('/chat-consultations/{consultation}', [ChatConsultationController::class, 'show'])->name('chat-consultations.show');
 Route::post('/chat-consultations', [ChatConsultationController::class, 'store'])->name('chat-consultations.store');
 Route::get('/chat-consultations-ota', [ChatConsultationController::class, 'otaIndex'])->name('chat-consultations.ota');
+
+//Rating
+Route::get('/ratings', [RatingController::class, 'index'])->name('ratings.index');
+Route::post('/ratings/createRating', [RatingController::class, 'store'])->name('storeRating');
