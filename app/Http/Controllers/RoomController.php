@@ -23,6 +23,11 @@ class RoomController extends Controller
         return view('rooms.index', compact('rooms', 'accomodation', 'qty', 'check_in', 'check_out'));
     }
 
+    public function indexCreate()
+    {
+        return view('rooms.create');
+    }
+
     //Accomodation Id harus di lempar"
     public function create(Request $request)
     {
@@ -50,13 +55,6 @@ class RoomController extends Controller
             'price' => $request->price
         ]);
         return redirect('/rooms');
-    }
-
-    public function show(Request $request)
-    {
-        $rooms = Room::paginate(5);
-        $user = Auth::user();
-        return view('show_room', compact('rooms'));
     }
 
     public function edit($id)

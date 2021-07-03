@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CheckoutController;
 
 use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\RoomController;
@@ -23,7 +24,8 @@ Auth::routes();
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// })->name("home");
 
 // Accomodations
 Route::get('/accomodations', [AccomodationController::class, 'index'])->name('accomodations.index');
@@ -38,3 +40,7 @@ Route::post('/rooms/createRoom', [RoomController::class, 'create'])->name('creat
 // Booking
 Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
 Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
+
+// Checkout
+Route::get('/checkout', [CheckoutController::class, 'checkout']);
+Route::get('/history', [CheckoutController::class, 'history']);
