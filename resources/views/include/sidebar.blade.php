@@ -3,7 +3,7 @@
         <h3>{{ auth()->user()->name }}</h3>
         <p>Balance: Rp {{ number_format(auth()->user()->balance) }}</p>
         <hr>
-        <ul class="list-unstyled">
+        <ul class="list-unstyled sidebar-style">
             @if (auth()->user()->role == 'OTA')
                 <li>
                     <a href="{{ route('chat-consultations.ota') }}">Your Consultations</a>
