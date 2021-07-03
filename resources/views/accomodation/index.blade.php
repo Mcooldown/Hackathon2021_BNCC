@@ -2,13 +2,14 @@
 
 @section('content')
     <table>
-        <tr>
-            @foreach ($accomodations as $accomodation)
+        @foreach ($accomodations as $accomodation)
+            <tr>
                 {{ $accomodation->name }}
                 {{ $accomodation->category_id }}
                 {{ $accomodation->city }}
                 {{ $accomodation->address }}
-            @endforeach
-        </tr>
+            </tr>
+            <br>
+        @endforeach
     </table>
 @endsection

@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\Accomodation;
-use App\Http\Models\Rating;
+use App\Models\Accomodation;
+use App\Models\Rating;
 
 class AccomodationController extends Controller
 {
     public function index(){
         $accomodations = Accomodation::all();
-        return view('', compact('accomodations'));
+        return view('accomodation.index', compact('accomodations'));
+    }
+    public function indexCreate(){
+        return view('accomodation.create');
     }
 
     public function store(Request $request){
@@ -20,8 +23,11 @@ class AccomodationController extends Controller
             'city'=>'required|max:255',
             'address'=>'required',
         ]);
+        $path=null;
 
-        $path = $request->file('foto_barang')->store('images');
+        if($request->photo){
+            $path = $request->file('photo')->store('images');
+        }
         Accomodation::create([
             'name' => $request->name,
             'category_id' => $request->category,
@@ -32,4 +38,6 @@ class AccomodationController extends Controller
 
         return redirect('/');
     }
+
+
 }
