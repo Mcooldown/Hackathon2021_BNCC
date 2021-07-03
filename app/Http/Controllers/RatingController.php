@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Rating;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class RatingController extends Controller
 {
