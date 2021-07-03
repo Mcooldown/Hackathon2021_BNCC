@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', Rooms)
 @section('content')
     <div class="container py-5">
         <a class="btn btn-primary"

@@ -17903,23 +17903,32 @@ body, html {
 }
 
 .content-login {
-  margin-top: 150px;
+  align-items: center;
+  padding: 20px;
   color: #748A9D;
   display: flex;
   justify-content: space-around;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin: 60px 280px;
 }
 
 .logo-login {
   text-align: center;
-  margin-top: 50px;
+  margin: auto 0;
+}
+
+.logo-login a {
+  text-decoration: none;
+  color: #748A9D;
 }
 
 .content-wraper-login {
-  background-color: #e6e6e6;
   border-radius: 50px;
   padding: 20px 50px;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
 }
 
 .login-form input {
@@ -17927,28 +17936,26 @@ body, html {
   border: #748A9D 1px;
   border-style: solid;
   padding: 12px 20px;
-  width: 200px;
+  width: 250px;
   margin: 0;
 }
 
 .login-form label {
-  margin-left: 10px;
-  margin-top: 100px;
+  margin-top: 15px;
 }
 
 .login-btn {
   padding: 12px 15px;
-  background-color: #e6e6e6;
   text-align: center;
 }
 
 .login-btn input {
   padding: 12px 24px;
-  border: #748A9D 1px;
+  border: #00e2a7 1px;
   border-style: solid;
   border-radius: 40px;
   background: none;
-  color: #748A9D;
+  color: #00e2a7;
   font-weight: bold;
   cursor: pointer;
   font-size: 0.98rem;
@@ -17956,6 +17963,78 @@ body, html {
 }
 
 .register-btn a {
-  color: #52C8FA;
+  color: #00e2a7;
   text-decoration: none;
+}
+
+.register-itemsection {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pass-register {
+  display: flex;
+  justify-content: center;
+}
+
+.save-btn-register {
+  padding: 0 15px;
+  text-align: center;
+}
+
+.content-register {
+  margin: 3.5rem 0 10rem 0;
+  color: #748A9D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-register {
+  margin: 30px;
+  border-radius: 30px;
+}
+
+.detail-register input {
+  border-radius: 50px;
+  border: #748A9D 1px;
+  border-style: solid;
+  padding: 12px 20px;
+  width: 300px;
+  margin: 0 20px;
+}
+
+.detail-register label {
+  margin-left: 10px;
+  margin-top: 12px;
+}
+
+.save-btn-register input {
+  width: 120px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 40px;
+  background: none;
+  background-color: #00e2a7;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.content-wrapper-register {
+  align-items: center;
+}
+
+.pic-register {
+  text-align: center;
+}
+
+.register-itemsection label b {
+  margin-left: 8px;
+  margin-bottom: 5px;
+}
+
+.register-btn {
+  margin-top: 20px;
 }

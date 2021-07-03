@@ -5,23 +5,36 @@ body, html{
 }
 
 .content-login{
-    margin-top: 150px;
+    align-items: center;
+    padding: 20px;
     color: #748A9D;
     display: flex;
     justify-content: space-around;   
-    margin-left: 300px;
-    margin-right: 300px;
+    margin: 60px 280px;
 }
 
 .logo-login{
     text-align: center;
-    margin-top: 50px;
+    margin: auto 0;
+}
+
+.logo-login a{
+    text-decoration: none;
+    color: #748A9D;
 }
 
 .content-wraper-login{
-    background-color:  rgb(230, 230, 230);
     border-radius: 50px;
     padding: 20px 50px;
+}
+
+// .wraping-form{
+    
+// }
+
+.login-form{
+    display: flex;
+    justify-content: center;
 }
 
 .login-form input{
@@ -29,28 +42,26 @@ body, html{
     border: #748A9D 1px;
     border-style: solid;
     padding: 12px 20px;
-    width: 200px;
+    width: 250px;
     margin: 0;
 }
 
 .login-form label{
-    margin-left: 10px;
-    margin-top: 100px;
+    margin-top: 15px;
 }
 
 .login-btn{
     padding: 12px 15px;
-    background-color: rgb(230, 230, 230);
     text-align: center;
 }
 
 .login-btn input{
     padding: 12px 24px;
-    border: #748A9D 1px;
+    border: #00e2a7 1px;
     border-style: solid;
     border-radius: 40px;
     background: none;
-    color: #748A9D;
+    color: #00e2a7;
     font-weight: bold;
     cursor: pointer;
     font-size: 0.98rem;
@@ -58,7 +69,6 @@ body, html{
 }
 
 .register-btn a{
-    color: #52C8FA;
+    color: #00e2a7;
     text-decoration: none;
-    
 }

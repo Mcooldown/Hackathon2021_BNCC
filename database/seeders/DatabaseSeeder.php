@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             RecommendationSeeder::class,
             RatingSeeder::class,
+            RoomSeeder::class,
         ]);
     }
 }
