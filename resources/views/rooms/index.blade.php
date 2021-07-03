@@ -3,9 +3,7 @@
 @section('content')
     <div class="container py-5">
         <a class="btn btn-hijau"
-            href="{{ route('accomodations.index', ['qty' => $qty, 'city_id' => $accomodation->city->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Back
-            to
-            accomodations</a>
+            href="{{ route('accomodations.index', ['qty' => $qty, 'city_id' => $accomodation->city->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Back to accomodations</a>
         <div class="card my-2">
             <div class="card-body">
                 <div class="row">
