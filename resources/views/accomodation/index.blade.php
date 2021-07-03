@@ -2,11 +2,14 @@
 @section('title', 'Accomodation Search - NginepKuy')
 @section('content')
     <div class="container py-5">
-
         <div class="header-accomodation">
             <div class="d-flex justify-content-between">
                 <h1>Accomodation in {{ $city->name }}, {{ $city->country }}</h1>
-                
+                <div class="d-flex fs-6 zone-wrap" data-toggle="tooltip" data-placement="bottom" title="🟢 Safe&#013;🟡 Warning&#013;🟠 Risk&#013;🔴 Danger&#013;⚫ Hazard">
+                    <h1 class="d-flex align-items-center">
+                        Zone: <span id="zone-color"></span>
+                    </h1>
+                </div>
             </div>
             <div class="d-flex justify-content-between">
                 <p>{{ $_GET['qty'] }} Rooms - {{ count($accomodations) }} accomodations found</p>
@@ -39,7 +42,13 @@
             </div>
         @endforeach
     </div>
+
     <script>
+
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
         var provinsiName = [""];
         var kasusPositif = 0;
         var color = [""];
@@ -69,7 +78,7 @@
             }
             for(let i=0; i<provinsiName.length; i++){
                 if(document.getElementById("province").value == provinsiName[i]){
-                    console.log(color[i]);
+                    document.getElementById("zone-color").style.backgroundColor = color[i];
                 }
             }
         }

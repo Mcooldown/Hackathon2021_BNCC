@@ -26,3 +26,18 @@
         }
     }
 }
+
+.zone-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.zone-wrap h1 span{
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+}
