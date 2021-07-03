@@ -18,7 +18,7 @@ use App\Http\Controllers\AccomodationController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 Route::get('/accomodations', [AccomodationController::class, 'index']);
 Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);
