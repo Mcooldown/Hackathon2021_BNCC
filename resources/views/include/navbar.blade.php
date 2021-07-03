@@ -9,7 +9,6 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
                 <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
-                <a class="nav-link" href="#">Accomodation</a>
                 <a class="nav-link" href="#">Travel Agent</a>
                 @guest
                     @if (Route::has('login'))

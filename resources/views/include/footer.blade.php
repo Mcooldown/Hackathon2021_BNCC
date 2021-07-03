@@ -31,15 +31,15 @@
   <section class="">
     <div class="container text-center text-md-start mt-5">
       <div class="row mt-3">
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <h6 class="text-uppercase fw-bold mb-4">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-5">
+          <h6 class="text-uppercase fw-bold mb-2">
               <div class="w-100">
                   <img src="/storage/assets/logo2.png" alt="" width="220px">
               </div>
           </h6>
           <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
+            NginepKuy! present in the midst of the COVID-19 pandemic that provides 
+            unique lodging in the form of villas, apartments, glamping, etc.
           </p>
         </div>
 
@@ -83,13 +83,13 @@
           <h6 class="text-uppercase fw-bold mb-4">
             Contact
           </h6>
-          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p><i class="fas fa-home me-3"></i> Jakarta, DKI 12345, IDN</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            info@example.com
+            nginep@kuy.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          <p><i class="fas fa-phone me-3"></i> + 62 812 3456 789</p>
+          <p><i class="fas fa-print me-3"></i> (021) 1234567</p>
         </div>
       </div>
     </div>
