@@ -17,8 +17,8 @@ class CreateRatingsTable extends Migration
             $table->id();
             $table->integer('star');
             $table->text('comment');
-            $table->bigInteger('accomodationId')->unsigned();
-            $table->foreign('accomodationId')->references('id')->on('accomodations');
+            $table->bigInteger('accomodation_id')->unsigned();
+            $table->foreign('accomodation_id')->references('id')->on('accomodations');
             $table->timestamps();
         });
     }
