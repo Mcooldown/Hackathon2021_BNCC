@@ -52,13 +52,6 @@ class RoomController extends Controller
         return redirect('/rooms');
     }
 
-    public function show(Request $request)
-    {
-        $rooms = Room::paginate(5);
-        $user = Auth::user();
-        return view('show_room', compact('rooms'));
-    }
-
     public function edit($id)
     {
         $rooms = Room::find($id);
