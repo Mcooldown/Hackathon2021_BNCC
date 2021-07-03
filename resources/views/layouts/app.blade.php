@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    @include('include.alert')
     <div id="app">
         @include('include.navbar')
 
