@@ -17,10 +17,10 @@ class CreateAccomodationsTable extends Migration
             $table->id();
             $table->string('name');
             $table->bigInteger('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');;
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->string('photo')->nullable();
             $table->bigInteger('city_id')->unsigned();
-            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('cascade');;
+            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('cascade');
             $table->string('address');
             $table->integer('health_protocol_fee');
             $table->timestamps();

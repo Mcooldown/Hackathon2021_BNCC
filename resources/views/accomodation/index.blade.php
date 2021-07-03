@@ -4,7 +4,14 @@
     <div class="container py-5 mb-5">
 
         <div class="header-accomodation">
-            <h1>Accomodation in <span class="fw-bold text-teal">{{ $city->name }}, {{ $city->country }}</span></h1>
+            <div class="d-flex justify-content-between">
+                <h1>Accomodation in <span class="fw-bold text-teal">{{ $city->name }}, {{ $city->country }}</span></h1>
+                <div class="d-flex fs-6 zone-wrap" data-toggle="tooltip" data-placement="bottom" title="🟢 Safe&#013;🟡 Warning&#013;🟠 Risk&#013;🔴 Danger&#013;⚫ Hazard">
+                    <h1 class="d-flex align-items-center">
+                        Zone:&nbsp;<span id="zone-color"></span>
+                    </h1>
+                </div>
+            </div>
             <div class="d-flex justify-content-between mt-3">
                 <p class="m-0">{{ $_GET['qty'] }} Rooms - {{ count($accomodations) }} accomodations found</p>
                 <p class="m-0 text-muted">Check-in : {{ date('d F Y', $check_in) }} - Check-out:
@@ -75,15 +82,9 @@
                     }
                 }
             }
-<<<<<<< HEAD
             for(let i=0; i<provinsiName.length; i++){
                 if(document.getElementById("province").value == provinsiName[i]){
                     document.getElementById("zone-color").style.backgroundColor = color[i];
-=======
-            for (let i = 0; i < provinsiName.length; i++) {
-                if (document.getElementById("province").value == provinsiName[i]) {
-                    console.log(color[i]);
->>>>>>> 766581a76923f730bef9a876e5d2a1735a01eb4a
                 }
             }
         }

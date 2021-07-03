@@ -20,9 +20,13 @@
                     <div class="col-md-8">
                         <h6 class="text-muted">{{ $accomodation->category->category_name }}</h6>
                         <h3 class="text-teal fw-bold">{{ $accomodation->name }}</h3>
-                        <p class="text-muted">{{ $accomodation->address }}, {{ $accomodation->city->name }},
-                            {{ $accomodation->city->country }}
-                        </p>
+                        <div class="d-flex room-zone">
+                            <input type="hidden" id="province" value="{{ $accomodation->city->province }}">
+                            <p class="text-muted">{{ $accomodation->address }}, {{ $accomodation->city->name }},
+                                {{ $accomodation->city->country }}
+                            </p>
+                            <p data-toggle="tooltip" data-placement="bottom" title="🟢 Safe&#013;🟡 Warning&#013;🟠 Risk&#013;🔴 Danger&#013;⚫ Hazard">&nbsp;<span id="zone-color"></span></p>
+                        </div>
                     </div>
                     <div class="col-md-2 d-flex justify-content-center">
                         <h4>
@@ -97,6 +101,11 @@
         @endforeach
     </div>
     <script>
+
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
         var provinsiName = [""];
         var kasusPositif = 0;
         var color = [""];
@@ -124,9 +133,10 @@
                     }
                 }
             }
-            for (let i = 0; i < provinsiName.length; i++) {
-                if (document.getElementById("province").value == provinsiName[i]) {
-                    console.log(color[i]);
+            for(let i=0; i<provinsiName.length; i++){
+                if(document.getElementById("province").value == provinsiName[i]){
+                    console.log(provinsiName[i]);
+                    document.getElementById("zone-color").style.backgroundColor = color[i];
                 }
             }
         }
