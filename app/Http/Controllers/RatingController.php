@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Rating;
+use Auth;
 
 class RatingController extends Controller
 {
@@ -21,7 +22,8 @@ class RatingController extends Controller
         Rating::create([
             'star' => $request->star,
             'comment' => $request->comment,
-            'accomodation_id' => $request->accomodation_id
+            'accomodation_id' => $request->accomodation_id,
+            'user_id' => Auth::user()->id
         ]);
         return redirect('/');
     }
