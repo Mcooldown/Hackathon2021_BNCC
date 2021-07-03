@@ -29,7 +29,27 @@ class CitySeeder extends Seeder
                 'name' => 'Bandung',
                 'country' => 'Indonesia',
                 'province' => 'Jawa Barat'
-            ]
+            ],
+            [
+                'name' => 'Depok',
+                'country' => 'Indonesia',
+                'province' => 'Jawa Barat'
+            ],
+            [
+                'name' => 'Yogyakarta',
+                'country' => 'Indonesia',
+                'province' => 'DI Yogyakarta'
+            ],
+            [
+                'name' => 'Jakarta Utara',
+                'country' => 'Indonesia',
+                'province' => 'DKI Jakarta'
+            ],
+            [
+                'name' => 'Depasar',
+                'country' => 'Indonesia',
+                'province' => 'Bali'
+            ],
         ]);
     }
 }

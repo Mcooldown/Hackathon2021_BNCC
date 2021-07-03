@@ -30,7 +30,12 @@
                             @endphp
                         @endforeach
                         @php
-                            echo $total/$ratings->count()."/5"
+                            if($ratings->count() != 0){
+                                echo $total/$ratings->count()."/5";
+                            }
+                            else {
+                                echo "4.9"
+                            }
                         @endphp
                     </div>
                 </div>
@@ -64,7 +69,7 @@
         var provinsiName = [""];
         var kasusPositif = 0;
         var color = [""];
-        
+
         const Http = new XMLHttpRequest();
         const url='https://indonesia-covid-19.mathdro.id/api/provinsi';
         Http.open('GET', url);

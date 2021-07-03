@@ -32,6 +32,25 @@ class RatingSeeder extends Seeder
                 'accomodation_id' => 3,
                 'user_id' => 3,
                 'comment' => 'good hospitality',
+            ],
+
+            [
+                'star' => 3,
+                'accomodation_id' => 4,
+                'user_id' => 1,
+                'comment' => 'lumayan okee',
+            ],
+            [
+                'star' => 3,
+                'accomodation_id' => 5,
+                'user_id' => 2,
+                'comment' => 'keren',
+            ],
+            [
+                'star' => 2,
+                'accomodation_id' => 6,
+                'user_id' => 3,
+                'comment' => 'okee bang',
             ]
         ]);
     }

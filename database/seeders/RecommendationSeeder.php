@@ -34,6 +34,16 @@ class RecommendationSeeder extends Seeder
                 'accomodation_id' => 3,
                 'ota_id' => 1,
                 'comment' => 'very cheap',
+            ],
+            [
+                'accomodation_id' => 4,
+                'ota_id' => 1,
+                'comment' => 'nicee location',
+            ],
+            [
+                'accomodation_id' => 5,
+                'ota_id' => 1,
+                'comment' => 'great place',
             ]
         ]);
     }
