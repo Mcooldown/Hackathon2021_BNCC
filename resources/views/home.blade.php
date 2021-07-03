@@ -92,5 +92,7 @@
             </div>
         </div>
     </div>
-    <div class="about"></div>
+    <div class="more-section">
+
+    </div>
 @endsection
