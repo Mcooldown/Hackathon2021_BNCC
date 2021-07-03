@@ -20,6 +20,7 @@ class AccomodationController extends Controller
         $request->validate([
             'name'=>'required|max:255',
             'category'=>'required',
+            'photo' => 'image|max:10240',
             'city'=>'required|max:255',
             'address'=>'required',
         ]);

@@ -1,5 +1,5 @@
 @extends('layouts.app') @section('content')
-<form action="{{ route('storeAccomodation') }}" method="POST">
+<form action="{{ route('storeAccomodation') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <label for="name">name</label>
     <input type="text" name="name" id="name">
