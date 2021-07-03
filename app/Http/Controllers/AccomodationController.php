@@ -9,12 +9,14 @@ use App\Models\Rating;
 
 class AccomodationController extends Controller
 {
-    public function index($city_id, $qty)
+    public function index()
     {
-        $accomodations = Accomodation::where('city_id', $city_id)->get();
-        $city = City::find($city_id);
+        $accomodations = Accomodation::where('city_id', $_GET['city_id'])->get();
+        $city = City::find($_GET['city_id']);
+        $check_in = strtotime($_GET['check_in']);
+        $check_out = strtotime($_GET['check_out']);
 
-        return view('accomodation.index', compact('accomodations', 'city', 'qty'));
+        return view('accomodation.index', compact('accomodations', 'city', 'check_in', 'check_out'));
     }
 
     public function indexCreate()

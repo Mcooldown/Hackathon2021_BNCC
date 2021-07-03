@@ -21,4 +21,9 @@ class Accomodation extends Model
     {
         return $this->hasOne(Room::class, 'accomodation_id')->orderBy('price', 'asc')->oldest()->withDefault();
     }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

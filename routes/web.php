@@ -6,6 +6,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CheckoutController;
 
 use App\Http\Controllers\AccomodationController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
 
 /*
@@ -19,37 +20,24 @@ use App\Http\Controllers\RoomController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name("home");
+Auth::routes();
 
-Route::get('/accomodation', function () {
-    return view('accomodation.index');
-})->name("accomodation");
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/rooms', function () {
-    return view('rooms.index');
-})->name("rooms");
-
-
-Route::get('/accomodations/{city_id}/{qty}', [AccomodationController::class, 'index']);
+// Accomodations
+Route::get('/accomodations', [AccomodationController::class, 'index'])->name('accomodations.index');
 Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);
-
 Route::post('/accomodations/createAccomodation', [AccomodationController::class, 'store'])->name('storeAccomodation');
 
-
 //Room
+Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
 Route::get('/rooms/create', [RoomController::class, 'indexCreate']);
 Route::post('/rooms/createRoom', [RoomController::class, 'create'])->name('createRoom');
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+// Booking
 Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
+Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
 
-
+// Checkout
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
 Route::get('/history', [CheckoutController::class, 'history']);
-Route::get('/rooms/{accomodation}/{qty}', [RoomController::class, 'index'])->name('rooms.index');
