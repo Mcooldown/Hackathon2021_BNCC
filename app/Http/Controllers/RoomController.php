@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Rating;
 
 class RoomController extends Controller
 {
@@ -19,8 +20,9 @@ class RoomController extends Controller
         $check_out = $_GET['check_out'];
         $accomodation = Accomodation::find($_GET['accomodation_id']);
         $rooms = Room::where('accomodation_id', $_GET['accomodation_id'])->get();
+        $ratings = Rating::where('accomodation_id',$_GET['accomodation_id'])->get();
 
-        return view('rooms.index', compact('rooms', 'accomodation', 'qty', 'check_in', 'check_out'));
+        return view('rooms.index', compact('rooms', 'accomodation', 'qty', 'check_in', 'check_out', 'ratings'));
     }
 
     public function indexCreate()

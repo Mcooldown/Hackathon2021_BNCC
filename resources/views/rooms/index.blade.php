@@ -6,15 +6,31 @@
             href="{{ route('accomodations.index', ['qty' => $qty, 'city_id' => $accomodation->city->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Back to accomodations</a>
         <div class="card my-2">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img src="/storage/images/{{ $accomodation->photo }}" width="100%" alt="">
+                <div class="d-flex">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="/storage/images/{{ $accomodation->photo }}" width="100%" alt="">
+                        </div>
+                        <div class="col-md-10">
+                            <h3>{{ $accomodation->name }}</h3>
+                            <p>Type: {{ $accomodation->category->category_name }}</p>
+                            <p>{{ $accomodation->city->name }}, {{ $accomodation->city->country }}</p>
+                            <p>{{ $accomodation->address }}</p>
+                        </div>
                     </div>
-                    <div class="col-md-10">
-                        <h3>{{ $accomodation->name }}</h3>
-                        <p>Type: {{ $accomodation->category->category_name }}</p>
-                        <p>{{ $accomodation->city->name }}, {{ $accomodation->city->country }}</p>
-                        <p>{{ $accomodation->address }}</p>
+                    <div class="accomodation-rating">
+                        Rating:
+                        @php
+                            $total=0;
+                        @endphp
+                        @foreach ($ratings as $rating)
+                            @php
+                                $total+=$rating->star
+                            @endphp
+                        @endforeach
+                        @php
+                            echo $total/$ratings->count()."/5"
+                        @endphp
                     </div>
                 </div>
             </div>
