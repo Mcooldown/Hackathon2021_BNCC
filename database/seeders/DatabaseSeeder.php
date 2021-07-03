@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             AccomodationSeeder::class,
             UserSeeder::class,
+            RecommendationSeeder::class,
         ]);
     }
 }
