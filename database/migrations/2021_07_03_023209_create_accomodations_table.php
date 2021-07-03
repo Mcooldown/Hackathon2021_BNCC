@@ -19,7 +19,8 @@ class CreateAccomodationsTable extends Migration
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->string('photo')->nullable();
-            $table->string('city');
+            $table->bigInteger('city_id')->unsigned();
+            $table->foreign('city_id')->references('id')->on('cities');
             $table->string('address');
             $table->integer('health_protocol_fee');
             $table->timestamps();

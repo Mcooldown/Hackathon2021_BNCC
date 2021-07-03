@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Accomodation;
 use App\Models\Booking;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,9 +15,9 @@ class BookingController extends Controller
         $this->middleware('auth');
     }
 
-    public function create(Accomodation $accomodation)
+    public function create(Room $room)
     {
-        return view('bookings.create', compact('accomodation'));
+        return view('bookings.create', compact('room'));
     }
 
     public function store()

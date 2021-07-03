@@ -6,6 +6,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CheckoutController;
 
 use App\Http\Controllers\AccomodationController;
+use App\Http\Controllers\RoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +20,19 @@ use App\Http\Controllers\AccomodationController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-Route::get('/accomodations', [AccomodationController::class, 'index']);
+Route::get('/accomodations/{city_id}/{qty}', [AccomodationController::class, 'index']);
 Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);
 
 Route::post('/accomodations/createAccomodation', [AccomodationController::class, 'store'])->name('storeAccomodation');
+
+
+//Room
+Route::get('/rooms', [RoomController::class, 'index']);
+Route::get('/rooms/create', [RoomController::class, 'indexCreate']);
+Route::post('/rooms/createRoom', [RoomController::class, 'create'])->name('createRoom');
+
 
 Auth::routes();
 
@@ -35,3 +43,4 @@ Route::get('/bookings/create', [BookingController::class, 'create'])->name('book
 
 Route::get('/checkout', [CheckoutController::class, 'checkout']);
 Route::get('/history', [CheckoutController::class, 'history']);
+Route::get('/rooms/{accomodation}/{qty}', [RoomController::class, 'index'])->name('rooms.index');

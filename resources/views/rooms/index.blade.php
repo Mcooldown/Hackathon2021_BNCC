@@ -3,7 +3,7 @@
 @section('content')
     <div class="container py-5">
 
-        <h1>Accomodation in {{ $city->name }}, {{ $city->country }}</h1>
+        <h1> in {{ $city->name }}, {{ $city->country }}</h1>
         <p>{{ $qty }} Rooms</p>
         <p>{{ count($accomodations) }} accomodations found</p>
         <hr>
@@ -20,8 +20,7 @@
                         </div>
                         <div class="col-md-3">
                             <h3>Rp{{ $accomodation->cheaperRoom->price }}</h3>
-                            <a class="btn btn-primary"
-                                href="{{ route('rooms.index', ['qty' => $qty, 'accomodation' => $accomodation]) }}">CHOOSE</a>
+                            <a href="{{ route('bookings.create') }}"></a>
                         </div>
                     </div>
                 </div>
