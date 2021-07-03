@@ -7,8 +7,12 @@ use App\Models\Rating;
 
 class RatingController extends Controller
 {
+    public function index(){
+        return view('ratings.index');
+    }
+
     public function store(Request $request){
-        $this->validate([
+        $request->validate([
             'star'=> 'required|numeric',
             'comment' => 'required|min:10',
             'accomodation_id' => 'required'
