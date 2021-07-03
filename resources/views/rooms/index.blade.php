@@ -18,8 +18,16 @@
                             <p>{{ $accomodation->address }}</p>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div class="accomodation-rating">
                         Rating:
+=======
+                    <div class="col-md-10">
+                        <h3>{{ $accomodation->name }}</h3>
+                        <p>Type: {{ $accomodation->category->category_name }}</p>
+                        <p>{{ $accomodation->city->name }}, {{ $accomodation->city->country }}</p>
+                        <p>{{ $accomodation->address }}</p>
+>>>>>>> 88fb8a5899921eaff83f75ae398fc76410527299
                         @php
                             $total=0;
                         @endphp
@@ -29,7 +37,11 @@
                             @endphp
                         @endforeach
                         @php
+<<<<<<< HEAD
                             echo $total/$ratings->count()."/5"
+=======
+                            echo $total/$ratings->count();
+>>>>>>> 88fb8a5899921eaff83f75ae398fc76410527299
                         @endphp
                     </div>
                 </div>

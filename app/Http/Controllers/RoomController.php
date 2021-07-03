@@ -20,13 +20,9 @@ class RoomController extends Controller
         $check_out = date('d-m-Y', $_GET['check_out']);
         $accomodation = Accomodation::find($_GET['accomodation_id']);
         $rooms = Room::where('accomodation_id', $_GET['accomodation_id'])->get();
-<<<<<<< HEAD
         $ratings = Rating::where('accomodation_id',$_GET['accomodation_id'])->get();
 
         return view('rooms.index', compact('rooms', 'accomodation', 'qty', 'check_in', 'check_out', 'ratings'));
-=======
-        return view('rooms.index', compact('rooms', 'accomodation', 'qty', 'check_in', 'check_out'));
->>>>>>> 94a946d01a47f4a72901e583cc10876af4604ab9
     }
 
     public function indexCreate()
