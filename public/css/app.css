@@ -17913,8 +17913,18 @@ footer {
   border: none;
 }
 
+.pisah {
+  margin-top: 50vh;
+}
+
 .more-section {
-  height: 130vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35vh;
+}
+
+.section-right {
+  width: 400px;
 }
 
 body, html {

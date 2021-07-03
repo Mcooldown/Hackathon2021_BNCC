@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@section('title', 'Checkout')
+@section('title', 'Checkout Transaction')
 @section('content')
     <div class="container py-5 my-5">
         <input type="hidden" name="booking_id" value="{{ $booking->id }}">

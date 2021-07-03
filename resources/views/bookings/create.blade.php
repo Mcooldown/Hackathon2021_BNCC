@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Create Booking')
+@section('title', 'Bookings - NginepKuy')
 @section('content')
     <div class="container py-5 my-5">
         <form action="{{ route('bookings.store') }}" method="POST">
