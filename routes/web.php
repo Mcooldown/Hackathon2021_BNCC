@@ -21,7 +21,17 @@ use App\Http\Controllers\RoomController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name("home");
+
+Route::get('/accomodation', function () {
+    return view('accomodation.index');
+})->name("accomodation");
+
+Route::get('/rooms', function () {
+    return view('rooms.index');
+})->name("rooms");
+
+
 Route::get('/accomodations/{city_id}/{qty}', [AccomodationController::class, 'index']);
 Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);
 
