@@ -12,6 +12,6 @@ class Room extends Model
     ];
 
     public function acomodation(){
-        return $this->belongsTo(Acomodation::class,'accomodation_id');
+        return $this->belongsTo(Accomodation::class,'accomodation_id');
     }
 }
