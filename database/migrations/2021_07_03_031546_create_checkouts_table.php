@@ -21,7 +21,7 @@ class CreateCheckoutsTable extends Migration
             $table->integer('total_payment');
             $table->bigInteger('user_id')->unsigned();
             $table->string('transfer_proof')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('booking_id')->references('id')->on('bookings')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

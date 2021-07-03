@@ -19,8 +19,8 @@ class CreateRatingsTable extends Migration
             $table->text('comment');
             $table->bigInteger('accomodation_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
-            $table->foreign('accomodation_id')->references('id')->on('accomodations');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('accomodation_id')->references('id')->on('accomodations')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -17,6 +17,7 @@ class CreateCitiesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('country');
+            $table->string('province');
             $table->timestamps();
         });
     }

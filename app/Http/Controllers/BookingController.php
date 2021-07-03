@@ -36,8 +36,8 @@ class BookingController extends Controller
             'user_id' => auth()->user()->id,
             'room_id' => request('room_id'),
             'quantity' => request('quantity'),
-            'check_in' => date('d-m-Y', request('check_in')),
-            'check_out' => date('d-m-Y', request('check_out')),
+            'check_in' => request('check_in'),
+            'check_out' => request('check_out'),
         ]);
 
         return redirect()->route('bookings.index')->with('success', 'Booking created');

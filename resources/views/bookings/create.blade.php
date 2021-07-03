@@ -20,12 +20,12 @@
                             <p><b>Check-in:</b>
                                 <input type="hidden" class="border-0" readonly value="{{ $_GET['check_in'] }}"
                                     name="check_in">
-                                {{ date('d-m-Y', $_GET['check_in']) }}
+                                {{ $_GET['check_in'] }}
                             </p>
                             <p> <b>Check-out:</b>
                                 <input type="hidden" class="border-0" readonly value="{{ $_GET['check_out'] }}"
                                     name="check_out">
-                                {{ date('d-m-Y', $_GET['check_out']) }}
+                                {{ $_GET['check_out'] }}
                             </p>
                             <p><b>Description</b><br>{{ $room->description }}</p>
                             <p>Room Quantity: <input type="text" class="border-0" readonly value="{{ $_GET['qty'] }}"

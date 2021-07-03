@@ -28,7 +28,7 @@ class ConsultationController extends Controller
     {
         if (request()->payment_type == 'BAL') {
             User::find(auth()->user()->id)->update([
-                'balance' => auth()->user()->balance - 100000,
+                'balance' => auth()->user()->balance - 40000,
             ]);
             $isEligible = true;
             $proofNameToStore = NULL;
@@ -48,7 +48,7 @@ class ConsultationController extends Controller
         }
 
         Consultation::create([
-            'price' => 100000,
+            'price' => 40000,
             'transfer_proof' => $proofNameToStore,
             'is_eligible' => $isEligible,
             'user_id' => auth()->user()->id,

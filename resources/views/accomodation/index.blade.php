@@ -10,6 +10,7 @@
                 <p class="m-0 text-muted">Check-in : {{ date('d F Y', $check_in) }} - Check-out:
                     {{ date('d F Y', $check_out) }}</p>
             </div>
+            <input type="hidden" id="province" value="{{ $city->province }}">
         </div>
 
         <hr>
@@ -40,4 +41,39 @@
             </div>
         @endforeach
     </div>
+    <script>
+        var provinsiName = [""];
+        var kasusPositif = 0;
+        var color = [""];
+
+        const Http = new XMLHttpRequest();
+        const url = 'https://indonesia-covid-19.mathdro.id/api/provinsi';
+        Http.open('GET', url);
+        Http.send();
+        Http.onreadystatechange = () => {
+            if (Http.readyState == 4 && Http.status == 200) {
+                var coronaData = JSON.parse(Http.responseText);
+                for (var i = 0; i < coronaData.data.length; i++) {
+                    provinsiName[i] = coronaData.data[i].provinsi;
+                    kasusPositif = parseInt(coronaData.data[i].kasusPosi);
+                    if (kasusPositif < 12099) {
+                        color[i] = "green"
+                    } else if (kasusPositif >= 12099 && kasusPositif < 24198) {
+                        color[i] = "yellow"
+                    } else if (kasusPositif >= 24198 && kasusPositif < 36297) {
+                        color[i] = "orange"
+                    } else if (kasusPositif >= 36297 && kasusPositif < 48396) {
+                        color[i] = "red"
+                    } else {
+                        color[i] = "black"
+                    }
+                }
+            }
+            for (let i = 0; i < provinsiName.length; i++) {
+                if (document.getElementById("province").value == provinsiName[i]) {
+                    console.log(color[i]);
+                }
+            }
+        }
+    </script>
 @endsection
