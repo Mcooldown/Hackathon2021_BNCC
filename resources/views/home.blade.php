@@ -92,7 +92,25 @@
             </div>
         </div>
     </div>
-    <div class="more-section">
 
+    <div class="more-section pisah">
+        <div class="section-left">
+            <img src="/storage/assets/undraw1.svg" alt="" width="400px">
+        </div>
+        <div class="section-right">
+            <h2>Staycation?</h2>
+            <p>NginepKuy! present in the midst of the COVID-19 pandemic that provides
+            unique lodging in the form of villas, apartments, glamping, etc.</p>
+        </div>
+    </div>
+    <div class="more-section">
+        <div class="section-right">
+            <h2>Staycation?</h2>
+            <p>NginepKuy! present in the midst of the COVID-19 pandemic that provides
+            unique lodging in the form of villas, apartments, glamping, etc.</p>
+        </div>
+        <div class="section-left">
+            <img src="/storage/assets/undraw2.svg" alt="" width="400px">
+        </div>
     </div>
 @endsection
