@@ -18,14 +18,17 @@ class CitySeeder extends Seeder
             [
                 'name' => 'Jakarta',
                 'country' => 'Indonesia',
+                'province' => 'DKI Jakarta'
             ],
             [
                 'name' => 'Bogor',
-                'country' => 'Indonesia'
+                'country' => 'Indonesia',
+                'province' => 'Jawa Barat'
             ],
             [
                 'name' => 'Bandung',
-                'country' => 'Indonesia'
+                'country' => 'Indonesia',
+                'province' => 'Jawa Barat'
             ]
         ]);
     }

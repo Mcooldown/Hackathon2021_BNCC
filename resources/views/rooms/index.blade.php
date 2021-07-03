@@ -12,6 +12,7 @@
                             <img src="/storage/images/{{ $accomodation->photo }}" width="100%" alt="">
                         </div>
                         <div class="col-md-10">
+                            <input type="hidden" id="province" value="{{ $accomodation->city->province }}">
                             <h3>{{ $accomodation->name }}</h3>
                             <p>Type: {{ $accomodation->category->category_name }}</p>
                             <p>{{ $accomodation->city->name }}, {{ $accomodation->city->country }}</p>
@@ -59,16 +60,39 @@
             </div>
         @endforeach
     </div>
-
-    {{-- <table>
-        @foreach ($rooms as $room)
-            <tr>
-                {{ $room->name }}
-                {{ $room->category_id }}
-                {{ $room->city }}
-                {{ $room->address }}
-            </tr>
-            <br>
-        @endforeach
-    </table> --}}
+    <script>
+        var provinsiName = [""];
+        var kasusPositif = 0;
+        var color = [""];
+        
+        const Http = new XMLHttpRequest();
+        const url='https://indonesia-covid-19.mathdro.id/api/provinsi';
+        Http.open('GET', url);
+        Http.send();
+        Http.onreadystatechange = () => {
+            if (Http.readyState == 4 && Http.status == 200) {
+                var coronaData = JSON.parse(Http.responseText);
+                for (var i = 0; i < coronaData.data.length; i++) {
+                    provinsiName[i]=coronaData.data[i].provinsi;
+                    kasusPositif=parseInt(coronaData.data[i].kasusPosi);
+                    if(kasusPositif < 12099){
+                    color[i]="green"
+                    }else if(kasusPositif >= 12099 && kasusPositif < 24198){
+                    color[i]="yellow"
+                    }else if(kasusPositif >= 24198 && kasusPositif < 36297){
+                    color[i]="orange"
+                    }else if(kasusPositif >= 36297 && kasusPositif < 48396){
+                    color[i]="red"
+                    }else{
+                    color[i]="black"
+                    }
+                }
+            }
+            for(let i=0; i<provinsiName.length; i++){
+                if(document.getElementById("province").value == provinsiName[i]){
+                    console.log(color[i]);
+                }
+            }
+        }
+    </script>
 @endsection
