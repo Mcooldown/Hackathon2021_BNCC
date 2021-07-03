@@ -15,8 +15,9 @@ class CreateCheckoutsTable extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('booking_id');
-            $table->integer('total_pay');
+            $table->unsignedBigInteger('booking_id');
+            $table->integer('total_payment');
+            $table->foreign('booking_id')->references('id')->on('bookings')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
