@@ -34,7 +34,7 @@ class RoomController extends Controller
             return redirect(route('viewHome'))->withErrors($validator)->withInput();
         }
 
-        $path = $request->file('room_photo')->store('images');
+        $path = $request->file('room_photo')->store('images/public');
 
         Room::create([
             'accomodation_id' => $request->accomodation_id,
@@ -44,7 +44,7 @@ class RoomController extends Controller
             'slot' => $request->slot,
             'price' => $request->price
         ]);
-        return redirect(route('viewHome'));
+        return redirect('/rooms');
     }
 
     public function show(Request $request)

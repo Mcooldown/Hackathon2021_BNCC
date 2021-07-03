@@ -36,6 +36,13 @@ Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate
 
 Route::post('/accomodations/createAccomodation', [AccomodationController::class, 'store'])->name('storeAccomodation');
 
+
+//Room
+Route::get('/rooms', [RoomController::class, 'index']);
+Route::get('/rooms/create', [RoomController::class, 'indexCreate']);
+Route::post('/rooms/createRoom', [RoomController::class, 'create'])->name('createRoom');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
