@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Checkout')
 @section('content')
     <div class="container my-5">
         <div class="row">
