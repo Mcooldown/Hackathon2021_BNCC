@@ -29,7 +29,6 @@ Route::post('/accomodations/createAccomodation', [AccomodationController::class,
 
 
 //Room
-Route::get('/rooms', [RoomController::class, 'index']);
 Route::get('/rooms/create', [RoomController::class, 'indexCreate']);
 Route::post('/rooms/createRoom', [RoomController::class, 'create'])->name('createRoom');
 
