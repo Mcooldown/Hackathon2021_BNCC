@@ -38,26 +38,29 @@
               </div>
           </h6>
           <p>
-            NginepKuy! present in the midst of the COVID-19 pandemic that provides 
+            NginepKuy! present in the midst of the COVID-19 pandemic that provides
             unique lodging in the form of villas, apartments, glamping, etc.
           </p>
         </div>
 
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <h6 class="text-uppercase fw-bold mb-4">
-            Products
+            Media Partners
           </h6>
           <p>
-            <a href="#!" class="text-reset">Angular</a>
+            <a href="https://www.technoscape.id/" class="text-reset">BNCC</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">React</a>
+            <a href="https://www.tiket.com/" class="text-reset">Tiket.Com</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Vue</a>
+            <a href="https://investree.id/" class="text-reset">Investree</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Laravel</a>
+            <a href="https://www.niagahoster.co.id/" class="text-reset">Niagahoster</a>
+          </p>
+           <p>
+            <a href="https://codex.works/" class="text-reset">Codex</a>
           </p>
         </div>
 
@@ -88,7 +91,7 @@
             <i class="fas fa-envelope me-3"></i>
             nginep@kuy.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> + 62 812 3456 789</p>
+          <p><i class="fas fa-phone me-3"></i> +62 812 3456 789</p>
           <p><i class="fas fa-print me-3"></i> (021) 1234567</p>
         </div>
       </div>
@@ -99,3 +102,5 @@
     <a class="text-reset fw-bold" href="/"><img src="/storage/assets/logo2.png" alt="" width="110px"></a>
   </div>
 </footer>
+
+
