@@ -56,6 +56,7 @@ class CheckoutController extends Controller
             'total_payment' => $totalPayment + $healthProtocolFee,
             'user_id' => auth()->user()->id,
             'transfer_proof' => $proofNameToStore,
+            'rating' => false
         ]);
 
         return redirect()->route('checkouts.index')->with('success', 'Checkout Success');
