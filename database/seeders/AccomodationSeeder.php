@@ -113,6 +113,80 @@ class AccomodationSeeder extends Seeder
                 'address' => 'Jl. Tomang Raya No.4',
                 'health_protocol_fee' => 1700000,
             ]
+
+            ,
+            [
+                'name' => 'Omang Glamping',
+                'category_id' => 3,
+                'photo' => 'abc_glamping.jpg',
+                'city_id' => 3,
+                'address' => 'Jl. Omang Raya No.4',
+                'health_protocol_fee' => 1700000,
+            ],
+            [
+                'name' => 'Buyung Villa',
+                'category_id' => 1,
+                'photo' => 'abc_glamping.jpg',
+                'city_id' => 3,
+                'address' => 'Jl. Buyung Tuman No.25',
+                'health_protocol_fee' => 1700000,
+            ],
+            [
+                'name' => 'Kamboja Apartment',
+                'category_id' => 2,
+                'photo' => 'abc_glamping.jpg',
+                'city_id' => 4,
+                'address' => 'Jl. Kamboja No.23',
+                'health_protocol_fee' => 1700000,
+            ],
+            [
+                'name' => 'Malioboro Apartment',
+                'category_id' => 2,
+                'photo' => 'abc_glamping.jpg',
+                'city_id' => 5,
+                'address' => 'Jl. Maloboro No.25',
+                'health_protocol_fee' => 2000000,
+            ],
+            [
+                'name' => 'Keraton Glamping',
+                'category_id' => 3,
+                'photo' => 'abc_glamping.jpg',
+                'city_id' => 5,
+                'address' => 'Jl. Keraton Ngawi No.25',
+                'health_protocol_fee' => 2500000,
+            ],
+            [
+                'name' => 'MOI Apartment',
+                'category_id' => 2,
+                'photo' => 'abc_glamping.jpg',
+                'city_id' => 6,
+                'address' => 'Jl. Kelapa Gading Raya No.14',
+                'health_protocol_fee' => 3500000,
+            ],
+            [
+                'name' => 'Ancol Glamping',
+                'category_id' => 3,
+                'photo' => 'abc_glamping.jpg',
+                'city_id' => 6,
+                'address' => 'Jl. Ancol Raya No.22',
+                'health_protocol_fee' => 3500000,
+            ],
+            [
+                'name' => 'Ubud Glamping',
+                'category_id' => 3,
+                'photo' => 'abc_glamping.jpg',
+                'city_id' => 7,
+                'address' => 'Jl. Ubud No.22',
+                'health_protocol_fee' => 3500000,
+            ],
+            [
+                'name' => 'Kintamani Villa',
+                'category_id' => 1,
+                'photo' => 'abc_glamping.jpg',
+                'city_id' => 7,
+                'address' => 'Jalan Raya Kintamani No.34',
+                'health_protocol_fee' => 2500000,
+            ]
         ]);
     }
 }
