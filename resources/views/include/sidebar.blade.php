@@ -1,9 +1,12 @@
-<div class="card border-0 shadow">
+<div class="card border-0 shadow rounded-30">
     <div class="card-body my-3">
-        <h3>{{ auth()->user()->name }}</h3>
+        <h3 class="text-teal fw-bold">{{ auth()->user()->name }}</h3>
         <p>Balance: Rp {{ number_format(auth()->user()->balance) }}</p>
         <hr>
         <ul class="list-unstyled sidebar-style">
+            <li>
+                <a href="{{ route('dashboard') }}">Main Dashboard</a>
+            </li>
             @if (auth()->user()->role == 'OTA')
                 <li>
                     <a href="{{ route('chat-consultations.ota') }}">Your Consultations</a>
