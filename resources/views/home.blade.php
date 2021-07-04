@@ -108,25 +108,56 @@
         </div>
     </div>
 
-    
-    <div class="more-section pisah">
-        <div class="section-left">
-            <img src="/storage/assets/undraw1.svg" alt="" width="400px">
+    <div class="container">
+        <div style="margin: 27rem 0 10rem 0;">
+            <h1 class="text-teal fw-bold text-center">NginepKuy present in the midst of the COVID-19 pandemic that provides
+                unique lodging in the form of villas, apartments, glamping, etc.</h1>
+
+            <div class="row justify-content-between align-items-center" style="margin-top:10rem;">
+                <div class="col-md-6 my-3">
+                    <img src="/storage/assets/about1.jpg" class="rounded-30" alt="" width="100%">
+                </div>
+                <div class="col-md-5 my-3">
+                    <h1 class="fw-bold text-teal">A platform that make your trip easier</h1>
+                    <p class="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis facere,
+                        perferendis
+                        quaerat deserunt numquam magni facilis laborum iusto cum a iste reprehenderit sunt quis quos
+                        voluptate nisi placeat unde pariatur!</p>
+                </div>
+            </div>
         </div>
-        <div class="section-right">
-            <h2>Staycation?</h2>
-            <p>NginepKuy! present in the midst of the COVID-19 pandemic that provides
-                unique lodging in the form of villas, apartments, glamping, etc.</p>
+        <div style="margin:10rem 0;">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <img src="/storage/assets/undraw2.svg" alt="" width="100%">
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <h1 class="fw-bold text-teal">Still find it difficult to plan your holiday?</h1>
+                    <p class="mt-3">NginepKuy! present in the midst of the COVID-19 pandemic that provides
+                        unique lodging in the form of villas, apartments, glamping, etc.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 10rem 0;">
+            <h1 class="fw-bold text-teal">Our Recommendation for your Trip</h1>
+            <hr>
+            <p class="text-muted">Here are beberapa contoh tempat yang kami sarankan ke anda wkwk</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow rounded-30">
+                        <div class="card-img-top">
+                            <img src="/storage/assets/about1.jpg" alt="" width="100%" style="border-radius: 30px 30px 0 0;">
+                        </div>
+                        <div class="card-body my-3">
+                            Hotel Alexis <br>
+                            Jakarta, Indonesia <br>
+                            Jl. yang aku dan kamu lewati bersama<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="more-section">
-        <div class="section-right">
-            <h2>Staycation?</h2>
-            <p>NginepKuy! present in the midst of the COVID-19 pandemic that provides
-                unique lodging in the form of villas, apartments, glamping, etc.</p>
-        </div>
-        <div class="section-left">
-            <img src="/storage/assets/undraw2.svg" alt="" width="400px">
-        </div>
-    </div>
+
 @endsection
