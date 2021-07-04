@@ -28,7 +28,8 @@ class HomeController extends Controller
     public function index()
     {
         $cities = City::all();
-        $accomodations = Recommendation::select('accomodation_id', DB::raw('count(*) as total'))->groupBy('accomodation_id')->get();
+        $accomodations = Recommendation::select('accomodation_id', DB::raw('count(*) as total'))->groupBy('accomodation_id')
+            ->orderBy('total', 'desc')->take(4)->get();
 
         return view('home', compact('cities', 'accomodations'));
     }

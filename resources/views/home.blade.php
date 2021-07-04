@@ -125,19 +125,18 @@
             <hr>
             <div class="row">
                 @foreach ($accomodations as $accomodation)
-                    <div class="col-md-3">
+                    <div class="col-md-3 my-3">
                         <div class="card border-0 shadow rounded-30">
                             <div class="card-img-top">
                                 <img src="/storage/images/{{ $accomodation->accomodation->photo }}" alt="" width="100%"
-                                    style="border-radius: 30px 30px 0 0;">
+                                    style="border-radius: 30px 30px 0 0;width:100%;height:200px;object-fit:cover;">
                             </div>
                             <div class="card-body my-3">
                                 <h5 class="text-teal fw-bold">{{ $accomodation->accomodation->name }}</h5>
-                                <p class="text-muted">{{ $accomodation->accomodation->address }}
-                                    <br>
-                                    {{ $accomodation->accomodation->city->name }},
+                                <p class="text-muted text-truncate m-0">{{ $accomodation->accomodation->address }}
+                                </p>
+                                <p class="text-truncate text-muted ">{{ $accomodation->accomodation->city->name }},
                                     {{ $accomodation->accomodation->city->country }}
-                                    <br>
                                 </p>
                                 <span class="fw-bold text-dark">{{ $accomodation->total }} recommendations</span>
                             </div>
