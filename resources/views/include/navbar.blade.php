@@ -13,6 +13,7 @@
                 @auth
                     @if (Auth::user()->role == 'ADMIN')
                         <a class="nav-link" href="{{ route('accomodation.show') }}">Accomodation</a>
+                        <a class="nav-link" href="{{ route('admin') }}">Confirmation</a>
                     @endif
                 @endauth
 
