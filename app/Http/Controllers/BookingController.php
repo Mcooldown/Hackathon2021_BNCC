@@ -32,14 +32,17 @@ class BookingController extends Controller
 
     public function store()
     {
-        Booking::create([
+        $booking=Booking::create([
             'user_id' => auth()->user()->id,
             'room_id' => request('room_id'),
             'quantity' => request('quantity'),
             'check_in' => request('check_in'),
             'check_out' => request('check_out'),
+            'packet' => request('packet'),
         ]);
+
 
         return redirect()->route('bookings.index')->with('success', 'Booking created');
     }
+
 }

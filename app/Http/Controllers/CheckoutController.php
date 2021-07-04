@@ -26,7 +26,7 @@ class CheckoutController extends Controller
         $booking = Booking::find(request('booking_id'));
         $day = intval(round((strtotime($booking->check_out) - strtotime($booking->check_in)) / (60 * 60 * 24)));
         $totalPayment = $booking->room->price * $booking->quantity * $day;
-        $healthProtocolFee = $booking->quantity * $booking->room->accomodation->health_protocol_fee;
+        $healthProtocolFee = $booking->quantity * $booking->room->accomodation->health_protocol_fee + request('addition');
 
         if (request()->payment_type == 'BAL') {
             User::find(auth()->user()->id)->update([
