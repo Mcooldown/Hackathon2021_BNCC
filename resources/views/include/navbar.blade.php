@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
                 <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
-                <a class="nav-link" href="#">Travel Agent</a>
+                <a class="nav-link" href="{{ route("consultations.index") }}">Travel Agent</a>
                 @auth
                     @if (Auth::user()->role == 'ADMIN')
                         <a class="nav-link" href="{{ route('accomodation.show') }}">Accomodation</a>

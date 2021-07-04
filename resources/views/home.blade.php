@@ -12,35 +12,42 @@
         </div> --}}
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/storage/assets/bg.jpeg" class="d-block w-100" alt="...">
+                <img src="/storage/assets/bgke1.jpg" class="d-block w-100" alt="...">
                 {{-- <div class="carousel-caption d-md-block marginHome">
                     <h5>First slide label</h5>
                     <p>Some representative placeholder content for the first slide.</p>
                 </div> --}}
             </div>
             <div class="carousel-item">
-                <img src="/storage/assets/bg2.jpg" class="d-block w-100" alt="...">
+                <img src="/storage/assets/bgke2.jpg" class="d-block w-100" alt="...">
                 {{-- <div class="carousel-caption d-md-block marginHome">
                     <h5>Second slide label</h5>
                     <p>Some representative placeholder content for the second slide.</p>
                 </div> --}}
             </div>
             <div class="carousel-item">
-                <img src="/storage/assets/bg3.jpg" class="d-block w-100" alt="...">
+                <img src="/storage/assets/bgke3.jpg" class="d-block w-100" alt="...">
+                {{-- <div class="carousel-caption d-md-block marginHome">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div> --}}
+            </div>
+            <div class="carousel-item">
+                <img src="/storage/assets/bgke4.jpg" class="d-block w-100" alt="...">
                 {{-- <div class="carousel-caption d-md-block marginHome">
                     <h5>Third slide label</h5>
                     <p>Some representative placeholder content for the third slide.</p>
                 </div> --}}
             </div>
         </div>
-        {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <button class="carousel-control-prev c-carousel-btn" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button class="carousel-control-next c-carousel-btn" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-        </button> --}}
+        </button>
     </div>
 
     <div class="pick-date p-0">
