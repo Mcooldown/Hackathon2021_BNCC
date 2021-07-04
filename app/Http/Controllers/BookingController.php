@@ -49,6 +49,7 @@ class BookingController extends Controller
             'quantity' => request('quantity'),
             'check_in' => request('check_in'),
             'check_out' => request('check_out'),
+            'packet' => request('packet'),
         ]);
 
         if (auth()->user()->role == 'OTA') {
@@ -57,4 +58,5 @@ class BookingController extends Controller
             return redirect()->route('bookings.index')->with('success', 'Booking created');
         }
     }
+
 }

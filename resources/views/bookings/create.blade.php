@@ -37,6 +37,26 @@
                                 <br>Health Protocol Fee: Rp{{ number_format($room->accomodation->health_protocol_fee) }}
                                 per room
                             </p>
+                            <p>Packet Health Protocol:
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="packet" id="flexRadioDefault1" value="1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Protocol 1 (1 Face Shield, 2 Face Mask): Rp11,999
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="packet" id="flexRadioDefault1" value="2">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Protocol 2 (1 Face Shield, 3 Face Mask, 1 Hand Sanitizier): Rp24,999
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="packet" id="flexRadioDefault1" value="3">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Protocol 3 (2 Face Shield, 4 Face Mask, 2 Hand Sanitizier): Rp49,999
+                                    </label>
+                                </div>
+                            </p>
                         </div>
                         <div class="col-md-2 my-2">
                             @if (auth()->user()->role == 'OTA')

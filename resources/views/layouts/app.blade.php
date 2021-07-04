@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="shortcut icon" href="/storage/assets/logo1.png">
+    <link rel="shortcut icon" href="/storage/assets/logofull.png">
     <title>@yield('title')</title>
 
 
@@ -48,10 +48,7 @@
             @yield('content')
         </main>
 
-        {{-- @if (url()->current() === route('login') || url()->current() === route('register'))
-        @else --}}
         @include('include.footer')
-        {{-- @endif --}}
     </div>
 </body>
 </html>

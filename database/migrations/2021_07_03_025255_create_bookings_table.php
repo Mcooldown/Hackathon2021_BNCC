@@ -20,6 +20,7 @@ class CreateBookingsTable extends Migration
             $table->integer('quantity');
             $table->string('check_in');
             $table->string('check_out');
+            $table->integer('packet')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('room_id')->references('id')->on('rooms')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

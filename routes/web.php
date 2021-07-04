@@ -31,6 +31,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/term',[HomeController::class,'term'])->name('term');
 
+//covid
+Route::get('/covidinfo', [HomeController::class, 'covidinfo'])->name('covidinfo');
+Route::get('/covidnews', [HomeController::class, 'covidnews'])->name('covidnews');
+
 // Accomodations
 Route::get('/accomodations', [AccomodationController::class, 'index'])->name('accomodations.index');
 Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);

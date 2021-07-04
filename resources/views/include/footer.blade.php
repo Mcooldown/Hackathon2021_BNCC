@@ -83,7 +83,7 @@
             <a href="#!" class="text-reset">Dashboard</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">COVID Info</a>
+            <a href="{{ route("covidinfo") }}" class="text-reset">COVID Info</a>
           </p>
           <p>
             <a href="/term" class="text-reset">Term & Condition</a>
