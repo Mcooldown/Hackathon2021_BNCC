@@ -31,17 +31,43 @@
                                 value="{{ $booking->quantity }}" name="quantity">
                             <br>Price per Night: Rp{{ number_format($booking->room->price) }}
                             <br>Health Protocol Fee:
-                            Rp{{ number_format($booking->room->accomodation->health_protocol_fee) }} <br>
-                            Total Day: {{ $day }}
+                            Rp{{ number_format($booking->room->accomodation->health_protocol_fee) }}
+                            @php
+                                $addtiion=0;
+                            @endphp
+                            @if($booking->packet!=NULL)
+                            <br>Additional Protocol Packet:
+                                @if($booking->packet==1)
+                                    Rp11,999
+                                    @php
+                                        $addition=11999;
+                                    @endphp
+                                @endif
+                                @if($booking->packet==2)
+                                    Rp24,999
+                                    @php
+                                        $addition=24999;
+                                    @endphp
+                                @endif
+                                @if($booking->packet==3)
+                                    Rp49,999
+                                   @php
+                                       $addition=49999;
+                                   @endphp
+                                @endif
+
+                            @endif
+                            <br>Total Day: {{ $day }}
                         </p>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end my-2 text-end">
                         Total Room Price: Rp{{ number_format($booking->room->price * $booking->quantity * $day) }} <br>
                         Total Health Protocol Fee:
-                        Rp{{ number_format($booking->room->accomodation->health_protocol_fee * $booking->quantity) }}
+                        Rp{{ number_format($booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition)}}
+
                         <br> <br>
                         Total Price:
-                        Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity) }}
+                        Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition) }}
                     </div>
                 </div>
             </div>
@@ -57,7 +83,7 @@
                         With Bank Transfer
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body my-4 px-5">
                         <form action="{{ route('checkouts.store') }}" method="POST" enctype="multipart/form-data">
@@ -66,8 +92,9 @@
                             <input type="hidden" name="day" value="{{ $day }}">
                             <input type="hidden" name="payment_type" value="BNK">
                             <p>Total Payment:
-                                Rp{{ $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity }}
+                                Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity +$addition) }}
                             </p>
+                            <input type="hidden" name="addition" value="{{ $addition }}">
                             <p>Please transfer to: 3892478923xxxx a/n Brian</p>
                             <hr>
                             <label for="transfer_proof">Upload your transfer proof
@@ -99,12 +126,13 @@
                             <input type="hidden" name="booking_id" value="{{ $booking->id }}">
                             <input type="hidden" name="day" value="{{ $day }}">
                             <input type="hidden" name="payment_type" value="BAL">
+                            <input type="hidden" name="addition" value="{{ $addition }}">
                             <p>Your Balance: Rp{{ auth()->user()->balance }}</p>
                             <p>Total Payment:
-                                Rp{{ $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity }}
+                                Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition)}}
                             </p>
                             <div class="d-flex justify-content-end">
-                                @if (auth()->user()->balance < $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity)
+                                @if (auth()->user()->balance < $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition)
                                     <h5 class="fw-bold text-danger">Not enough balance</h5>
                                 @else
                                     <button type="submit" class="btn btn-hijau px-4 rounded-pill">Checkout with your

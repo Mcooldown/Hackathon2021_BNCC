@@ -3,7 +3,7 @@
 @section('content')
     <div class="container py-5 mb-5">
         <a class="btn btn-hijau btn-lg rounded-pill"
-            href="{{ route('accomodations.index', ['qty' => $qty, 'city_id' => $accomodation->city->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Back
+            href="{{ route('accomodations.index', ['qty' => $qty, 'city_id' => $accomodation->city->id, 'check_in' => $check_in, 'check_out' => $check_out, 'place' => $_GET['place']]) }}">Back
             to accomodations</a>
 
         <div class="d-flex justify-content-end">
@@ -70,9 +70,9 @@
                                     Night</small>
                             </h5>
                         </div>
-                        <div class="col-md-3 my-3">
+                        <div class="col-md-3 my-3 d-flex justify-content-center">
                             <a class="btn btn-hijau btn-lg rounded-pill px-4"
-                                href="{{ route('bookings.create', ['qty' => $qty, 'room_id' => $room->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Book
+                                href="{{ route('bookings.create', ['qty' => $qty, 'room_id' => $room->id, 'check_in' => $check_in, 'check_out' => $check_out, 'place' => $_GET['place']]) }}">Book
                                 This Room</a>
                         </div>
                     </div>

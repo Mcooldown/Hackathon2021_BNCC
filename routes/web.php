@@ -6,6 +6,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CheckoutController;
 
 use App\Http\Controllers\AccomodationController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChatConsultationController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\HomeController;
@@ -28,6 +29,7 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+Route::get('/term',[HomeController::class,'term'])->name('term');
 
 //covid
 Route::get('/covidinfo', [HomeController::class, 'covidinfo'])->name('covidinfo');
@@ -37,8 +39,8 @@ Route::get('/covidnews', [HomeController::class, 'covidnews'])->name('covidnews'
 Route::get('/accomodations', [AccomodationController::class, 'index'])->name('accomodations.index');
 Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);
 Route::post('/accomodations/createAccomodation', [AccomodationController::class, 'store'])->name('storeAccomodation');
-Route::get('/accomodations/show',[AccomodationController::class,'show'])->name('accomodation.show');
-Route::get('/accomodations/delete{id}',[AccomodationController::class,'delete'])->name('accomodation.delete');
+Route::get('/accomodations/show', [AccomodationController::class, 'show'])->name('accomodation.show');
+Route::get('/accomodations/delete{id}', [AccomodationController::class, 'delete'])->name('accomodation.delete');
 
 //Room
 Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
@@ -70,11 +72,18 @@ Route::post('/chat-consultations', [ChatConsultationController::class, 'store'])
 Route::get('/chat-consultations-ota', [ChatConsultationController::class, 'otaIndex'])->name('chat-consultations.ota');
 
 //Rating
-Route::get('/ratings', [RatingController::class, 'index'])->name('ratings.index');
-Route::post('/ratings/createRating', [RatingController::class, 'store'])->name('storeRating');
+Route::get('/ratings/{checkout}', [RatingController::class, 'index'])->name('ratings.index');
+Route::post('/ratings', [RatingController::class, 'store'])->name('storeRating');
 
 
 //profile
-Route::get('/profile', [UserController::class, 'index'])->name('profile');
+Route::get('/profile/', [UserController::class, 'index'])->name('profile');
 Route::PUT('/profile/{id}', [UserController::class, 'update'])->name('profile.update');
 
+//admin
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin/accept/{id}', [AdminController::class, 'accept'])->name('admin.accept');
+Route::get('/admin/decline/{id}', [AdminController::class, 'decline'])->name('admin.decline');
+
+Route::get('/ota/accept/{id}', [AdminController::class, 'otaaccept'])->name('ota.accept');
+Route::get('/ota/decline/{id}', [AdminController::class, 'otadecline'])->name('ota.decline');

@@ -42,4 +42,9 @@ class HomeController extends Controller
     {
         return view('covid.news');
     }
+
+    public function term()
+    {
+        return view('term');
+    }
 }
