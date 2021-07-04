@@ -1,7 +1,9 @@
 <div class="card border-0 shadow rounded-30">
     <div class="card-body my-3">
         <h3 class="text-teal fw-bold">{{ auth()->user()->name }}</h3>
-        <p>Balance: Rp {{ number_format(auth()->user()->balance) }}</p>
+        <p>
+            ID: {{ auth()->user()->id }} <br>
+            Balance: Rp {{ number_format(auth()->user()->balance) }}</p>
         <hr>
         <ul class="list-unstyled sidebar-style">
             <li>
@@ -11,16 +13,16 @@
                 <a href="{{ route('profile') }}">
                     <i class="fas fa-user me-2"></i>Profile</a>
             </li>
+            <li>
+                <a href="{{ route('home') }}"><i class="fas fa-ticket-alt me-2" aria-hidden="true"></i>Create New
+                    Booking</a>
+            </li>
             @if (auth()->user()->role == 'OTA')
                 <li>
                     <a href="{{ route('chat-consultations.ota') }}">
                         <i class="fas fa-people-arrows me-2"></i>Your Consultations</a>
                 </li>
             @else
-                <li>
-                    <a href="{{ route('home') }}"><i class="fas fa-ticket-alt me-2" aria-hidden="true"></i>Create New
-                        Booking</a>
-                </li>
                 <li>
                     <a href="{{ route('bookings.index') }}">
                         <i class="fas fa-ticket-alt me-2" aria-hidden="true"></i>My

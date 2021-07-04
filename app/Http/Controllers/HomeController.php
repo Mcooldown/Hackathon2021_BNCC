@@ -33,6 +33,16 @@ class HomeController extends Controller
         return view('dashboard');
     }
 
+    public function covidinfo()
+    {
+        return view('covid.index');
+    }
+
+    public function covidnews()
+    {
+        return view('covid.news');
+    }
+
     public function term()
     {
         return view('term');

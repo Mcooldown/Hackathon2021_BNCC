@@ -77,13 +77,13 @@
             <a href="#!" class="text-reset">About Us</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Travel Agent</a>
+            <a href="{{ route("consultations.index") }}" class="text-reset">Travel Agent</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Dashboard</a>
+            <a href="{{ route("dashboard") }}" class="text-reset">Dashboard</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">COVID Info</a>
+            <a href="{{ route("covidinfo") }}" class="text-reset">COVID Info</a>
           </p>
           <p>
             <a href="/term" class="text-reset">Term & Condition</a>
