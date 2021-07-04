@@ -11,6 +11,7 @@ use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,3 +68,8 @@ Route::get('/chat-consultations-ota', [ChatConsultationController::class, 'otaIn
 //Rating
 Route::get('/ratings', [RatingController::class, 'index'])->name('ratings.index');
 Route::post('/ratings/createRating', [RatingController::class, 'store'])->name('storeRating');
+
+
+//profile
+Route::get('/profile', [UserController::class, 'index']);
+Route::PUT('/profile/{id}', [UserController::class, 'update'])->name('profile.update');
