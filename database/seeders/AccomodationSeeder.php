@@ -70,9 +70,7 @@ class AccomodationSeeder extends Seeder
                 'city_id' => 3,
                 'address' => 'Jl. Permai damai No.4',
                 'health_protocol_fee' => 1500000,
-            ]
-
-            ,
+            ],
             [
                 'name' => 'zxc Glamping',
                 'category_id' => 3,
