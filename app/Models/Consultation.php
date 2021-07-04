@@ -9,7 +9,7 @@ class Consultation extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'start_time', 'end_time', 'price', 'transfer_proof', 'is_eligible', 'user_id', 'ota_id',
+        'start_time', 'end_time', 'price', 'transfer_proof', 'is_eligible', 'user_id', 'ota_id', 'transfer_proof'
     ];
 
     public function ota()

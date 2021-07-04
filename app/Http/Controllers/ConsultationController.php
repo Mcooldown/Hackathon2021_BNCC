@@ -30,6 +30,11 @@ class ConsultationController extends Controller
             User::find(auth()->user()->id)->update([
                 'balance' => auth()->user()->balance - 40000,
             ]);
+
+            $consultant = User::find(request('consultant_id'));
+            $consultant->balance += 40000;
+            $consultant->save();
+
             $isEligible = true;
             $proofNameToStore = NULL;
         } else {
