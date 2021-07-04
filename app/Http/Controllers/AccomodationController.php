@@ -5,25 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Accomodation;
 use App\Models\City;
-use App\Models\Room;
 use Illuminate\Support\Facades\Storage;
 
 class AccomodationController extends Controller
 {
     public function index()
     {
-        $accomodations = Accomodation::where('city_id', $_GET['city_id'])->get();
-        $city = City::find($_GET['city_id']);
         $check_in = strtotime($_GET['check_in']);
         $check_out = strtotime($_GET['check_out']);
         $qty = $_GET['qty'];
 
-        if ($accomodations->count() == 0) {
-            return back()->with('error', 'there is no accomodation yet');
-        }
-        if ($city == null) {
-            return back()->with('error', 'Please select the city');
-        }
         if ($check_in == null) {
             return back()->with('error', 'Please select your check-in date');
         }
@@ -36,6 +27,24 @@ class AccomodationController extends Controller
         if ($check_in >= $check_out) {
             return back()->with('error', 'Check in cannot be more than Check out');
         }
+
+        if ($_GET['place'] != null && $_GET['city_id'] != null) {
+            $accomodations = Accomodation::where([['name', 'LIKE', '%' . $_GET['place'] . '%'], ['city_id', $_GET['city_id']]])->get();
+            $city = City::find($_GET['city_id']);
+        } else if ($_GET['place'] != null) {
+            $accomodations = Accomodation::where('name', 'LIKE', '%' . $_GET['place'] . '%')->get();
+            $city = null;
+        } else if ($_GET['city_id'] != null) {
+            $accomodations = Accomodation::where('city_id', $_GET['city_id'])->get();
+            $city = City::find($_GET['city_id']);
+        } else {
+            return back()->with('error', 'Please input either city or place');
+        }
+
+        if ($accomodations->count() == 0) {
+            return back()->with('error', 'No accomodations found');
+        }
+
         return view('accomodation.index', compact('accomodations', 'city', 'check_in', 'check_out'));
     }
 

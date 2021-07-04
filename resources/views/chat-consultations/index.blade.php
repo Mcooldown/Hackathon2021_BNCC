@@ -20,15 +20,17 @@
                                         <div class="col-md-9 my-3">
                                             <h3 class="fw-bold text-teal">
                                                 @if (auth()->user()->id == $consultation->user_id)
-                                                    {{ $consultation->ota->name }} -{{ $consultation->ota->ota_name }}
+                                                    {{ $consultation->ota->name }} - {{ $consultation->ota->ota_name }}
                                                 @else
-                                                    {{ $consultation->user->name }}
+                                                    {{ $consultation->user->name }} - ID: {{ $consultation->user->id }}
                                                 @endif
                                             </h3>
                                             @if ($consultation->is_eligible == 0)
-                                                <p class="text-danger m-0">Not Eligible/ Waiting for confirmation</p>
-                                            @else
+                                                <p class="text-pending m-0">Waiting for confirmation</p>
+                                            @elseif($consultation->is_eligible == 1)
                                                 <p class="text-success m-0">Eligible</p>
+                                            @else
+                                                <p class="text-danger m-0">Not Eligible</p>
                                             @endif
                                             <p class="m-0">
                                                 @if ($consultation->start_time == null)
