@@ -17,10 +17,19 @@
                 <a href="{{ route('home') }}"><i class="fas fa-ticket-alt me-2" aria-hidden="true"></i>Create New
                     Booking</a>
             </li>
-            @if (auth()->user()->role == 'OTA')
+            @if (auth()->user()->role == 'ADMIN')
+                <li>
+                    <a href="{{ route('admin') }}">
+                        <i class="fas fa-people-arrows me-2"></i>Payment Confirmation</a>
+                </li>
+            @elseif (auth()->user()->role == 'OTA')
                 <li>
                     <a href="{{ route('chat-consultations.ota') }}">
                         <i class="fas fa-people-arrows me-2"></i>Your Consultations</a>
+                </li>
+                <li>
+                    <a href="{{ route('recommendations.index') }}">
+                        <i class="fas fa-star me-2"></i>Recommendations</a>
                 </li>
             @else
                 <li>

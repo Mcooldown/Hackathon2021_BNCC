@@ -57,7 +57,8 @@
                                         </div>
                                         <div class="my-3">
                                             <label for="qty">Number of Reserved Rooms</label>
-                                            <input type="number" min="1" name="qty" id="qty" class="form-control" placeholder="ex. 1">
+                                            <input type="number" min="1" name="qty" id="qty" class="form-control"
+                                                placeholder="ex. 1">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -117,21 +118,29 @@
 
         <div style="margin: 10rem 0;">
             <h1 class="fw-bold text-teal">Our Recommendation for your Trip</h1>
+            <p class="text-muted">Here are several recommendation for you</p>
             <hr>
-            <p class="text-muted">Here are beberapa contoh tempat yang kami sarankan ke anda wkwk</p>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card border-0 shadow rounded-30">
-                        <div class="card-img-top">
-                            <img src="/storage/assets/about1.jpg" alt="" width="100%" style="border-radius: 30px 30px 0 0;">
-                        </div>
-                        <div class="card-body my-3">
-                            Hotel Alexis <br>
-                            Jakarta, Indonesia <br>
-                            Jl. yang aku dan kamu lewati bersama<br>
+                @foreach ($accomodations as $accomodation)
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow rounded-30">
+                            <div class="card-img-top">
+                                <img src="/storage/images/{{ $accomodation->accomodation->photo }}" alt="" width="100%"
+                                    style="border-radius: 30px 30px 0 0;">
+                            </div>
+                            <div class="card-body my-3">
+                                <h5 class="text-teal fw-bold">{{ $accomodation->accomodation->name }}</h5>
+                                <p class="text-muted">{{ $accomodation->accomodation->address }}
+                                    <br>
+                                    {{ $accomodation->accomodation->city->name }},
+                                    {{ $accomodation->accomodation->city->country }}
+                                    <br>
+                                </p>
+                                <span class="fw-bold text-dark">{{ $accomodation->total }} recommendations</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

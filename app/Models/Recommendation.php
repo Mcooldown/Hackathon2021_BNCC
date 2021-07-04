@@ -13,4 +13,14 @@ class Recommendation extends Model
         'ota_id',
         'comment',
     ];
+
+    public function ota()
+    {
+        return $this->belongsTo('App\Models\User', 'ota_id');
+    }
+
+    public function accomodation()
+    {
+        return $this->belongsTo('App\Models\Accomodation', 'accomodation_id');
+    }
 }

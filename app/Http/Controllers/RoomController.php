@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Rating;
+use App\Models\Recommendation;
+use Illuminate\Support\Facades\DB;
 
 class RoomController extends Controller
 {
@@ -20,9 +22,9 @@ class RoomController extends Controller
         $check_out = date('d-m-Y', $_GET['check_out']);
         $accomodation = Accomodation::find($_GET['accomodation_id']);
         $rooms = Room::where('accomodation_id', $_GET['accomodation_id'])->get();
-        $ratings = Rating::where('accomodation_id',$_GET['accomodation_id'])->get();
-
-        return view('rooms.index', compact('rooms', 'accomodation', 'qty', 'check_in', 'check_out', 'ratings'));
+        $ratings = Rating::where('accomodation_id', $_GET['accomodation_id'])->get();
+        $recommendation = Recommendation::select(DB::raw('count(*) as total'))->where('accomodation_id', $_GET['accomodation_id'])->groupBy('accomodation_id')->first();
+        return view('rooms.index', compact('rooms', 'accomodation', 'qty', 'check_in', 'check_out', 'ratings', 'recommendation'));
     }
 
     public function indexCreate()

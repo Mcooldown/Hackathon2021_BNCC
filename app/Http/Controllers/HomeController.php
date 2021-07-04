@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Accomodation;
 use App\Models\City;
+use App\Models\Recommendation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -25,7 +28,9 @@ class HomeController extends Controller
     public function index()
     {
         $cities = City::all();
-        return view('home', compact('cities'));
+        $accomodations = Recommendation::select('accomodation_id', DB::raw('count(*) as total'))->groupBy('accomodation_id')->get();
+
+        return view('home', compact('cities', 'accomodations'));
     }
 
     public function dashboard()

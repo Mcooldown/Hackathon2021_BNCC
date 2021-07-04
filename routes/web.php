@@ -11,6 +11,7 @@ use App\Http\Controllers\ChatConsultationController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\RecommendationController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 
@@ -29,8 +30,8 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-Route::get('/term',[HomeController::class,'term'])->name('term');
-Route::get('/about',[HomeController::class,'about'])->name('about');
+Route::get('/term', [HomeController::class, 'term'])->name('term');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 //covid
 Route::get('/covidinfo', [HomeController::class, 'covidinfo'])->name('covidinfo');
@@ -76,8 +77,7 @@ Route::get('/chat-consultations-ota', [ChatConsultationController::class, 'otaIn
 Route::get('/ratings/{checkout}', [RatingController::class, 'index'])->name('ratings.index');
 Route::post('/ratings', [RatingController::class, 'store'])->name('storeRating');
 
-
-//profile
+//Profile
 Route::get('/profile', [UserController::class, 'index'])->name('profile');
 Route::PUT('/profile/{id}', [UserController::class, 'update'])->name('profile.update');
 
@@ -88,3 +88,10 @@ Route::get('/admin/decline/{id}', [AdminController::class, 'decline'])->name('ad
 
 Route::get('/ota/accept/{id}', [AdminController::class, 'otaaccept'])->name('ota.accept');
 Route::get('/ota/decline/{id}', [AdminController::class, 'otadecline'])->name('ota.decline');
+
+// Recommendation
+Route::get('/recommendations', [RecommendationController::class, 'index'])->name('recommendations.index');
+Route::get('/recommendations-search', [RecommendationController::class, 'search'])->name('recommendations.search');
+Route::get('/recommendations/create/{accomodation}', [RecommendationController::class, 'create'])->name('recommendations.create');
+Route::post('/recommendations', [RecommendationController::class, 'store'])->name('recommendations.store');
+Route::get('/recommendations/delete/{$recommendation}', [RecommendationController::class, 'delete'])->name('recommendations.delete');

@@ -29,6 +29,7 @@
                                 title="🟢 Safe&#013;🟡 Warning&#013;🟠 Risk&#013;🔴 Danger&#013;⚫ Hazard">&nbsp;<span
                                     id="zone-color"></span></p>
                         </div>
+                        <p>{{ $recommendation->total }} recommendations from Travel Agent</p>
                     </div>
                     <div class="col-md-2 d-flex justify-content-center">
                         <h4>
