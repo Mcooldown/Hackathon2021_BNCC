@@ -95,10 +95,10 @@
                 </div>
                 <div class="col-md-5 my-3">
                     <h1 class="fw-bold text-teal">A platform that make your trip easier</h1>
-                    <p class="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis facere,
-                        perferendis
-                        quaerat deserunt numquam magni facilis laborum iusto cum a iste reprehenderit sunt quis quos
-                        voluptate nisi placeat unde pariatur!</p>
+                    <p class="mt-3">Founded in 2021 by BucinDev, NginepKuy! was first created at the BNCC Technoscape 2021 Hackathon
+                        event. When BucinDev first started out, we passion for building best website and drove us to start their our
+                        own business.</p>
+                    <a href="{{ route("about") }}" class="show-more-submit" type="Submit" class="btn btn-secondary"> Show More..</a>
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@
         <div style="margin: 10rem 0;">
             <h1 class="fw-bold text-teal">Our Recommendation for your Trip</h1>
             <hr>
-            <p class="text-muted">Here are beberapa contoh tempat yang kami sarankan ke anda wkwk</p>
+            <p class="text-muted">Here are some examples of places we recommend to you</p>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card border-0 shadow rounded-30">
@@ -133,6 +133,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
