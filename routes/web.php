@@ -80,3 +80,6 @@ Route::PUT('/profile/{id}', [UserController::class, 'update'])->name('profile.up
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin/accept/{id}', [AdminController::class, 'accept'])->name('admin.accept');
 Route::get('/admin/decline/{id}', [AdminController::class, 'decline'])->name('admin.decline');
+
+Route::get('/ota/accept/{id}', [AdminController::class, 'otaaccept'])->name('ota.accept');
+Route::get('/ota/decline/{id}', [AdminController::class, 'otadecline'])->name('ota.decline');
