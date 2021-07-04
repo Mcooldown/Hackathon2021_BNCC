@@ -78,7 +78,7 @@ Route::post('/ratings', [RatingController::class, 'store'])->name('storeRating')
 
 
 //profile
-Route::get('/profile/', [UserController::class, 'index'])->name('profile');
+Route::get('/profile', [UserController::class, 'index'])->name('profile');
 Route::PUT('/profile/{id}', [UserController::class, 'update'])->name('profile.update');
 
 //admin
