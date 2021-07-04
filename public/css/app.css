@@ -17756,6 +17756,19 @@ html {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00e2a7;
+  border-radius: 25px;
+}
+
 .navbar {
   background-color: transparent !important;
 }
@@ -18203,6 +18216,14 @@ body, html {
   padding: 24px;
 }
 
+.term-container h1 {
+  margin-left: 20px;
+}
+
+.term-container hr {
+  margin-bottom: 0 !important;
+}
+
 .terms {
   margin: 20px;
 }
@@ -18210,4 +18231,30 @@ body, html {
 .terms b {
   font-size: 20px;
   margin-bottom: 5px;
+}
+
+.terms-bucindev {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.profile-bucindev img {
+  flex-basis: 100%;
+  width: 150px;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-bucindev p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.profile-bucindev img:hover {
+  box-shadow: 5px 5px 15px #00E1A4;
 }

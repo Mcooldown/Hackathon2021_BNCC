@@ -4,10 +4,11 @@
 @section('content')
 
 <div class="box-term">
-    <div class="card border-0 shadow mt-3 term-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="ease-in-out">
+    <div class="card border-0 shadow mt-3 term-container">
         <h1>
-            Privacy Policy for NginepKuy!
+            Term & Condition for NginepKuy!
         </h1>
+        <hr>
        <div class="term-content">
             <div class="terms">
                 <br>At NginepKuy!, accessible at Nginepkuy.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by NginepKuy! and how we use it.

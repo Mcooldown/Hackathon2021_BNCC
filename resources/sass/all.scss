@@ -3,6 +3,19 @@ html {
     padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00e2a7;
+  border-radius: 25px;
+}
+
 .navbar {
     background-color: transparent!important;
 }

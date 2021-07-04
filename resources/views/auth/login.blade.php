@@ -2,7 +2,7 @@
 @section('title', 'Login - NginepKuy')
 @section('content')
     <div class="container my-5 py-5">
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center mt-5 mb-5">
             <div class="col-md-5">
                 <div class="logo-login" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <a href="#">

@@ -47,4 +47,9 @@ class HomeController extends Controller
     {
         return view('term');
     }
+
+    public function about()
+    {
+        return view('about');
+    }
 }

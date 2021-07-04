@@ -74,19 +74,19 @@
             Useful links
           </h6>
           <p>
-            <a href="#!" class="text-reset">About Us</a>
+            <a href="{{ route("about") }}" class="text-reset">About Us</a>
           </p>
           <p>
             <a href="{{ route("consultations.index") }}" class="text-reset">Travel Agent</a>
           </p>
           <p>
-            <a href="{{ route("dashboard") }}" class="text-reset">Dashboard</a>
+            <a href="{{ route('dashboard') }}" class="text-reset">Dashboard</a>
           </p>
           <p>
             <a href="{{ route("covidinfo") }}" class="text-reset">COVID Info</a>
           </p>
           <p>
-            <a href="/term" class="text-reset">Term & Condition</a>
+            <a href="{{ route("term") }}" class="text-reset">Term & Condition</a>
           </p>
         </div>
 
@@ -106,8 +106,8 @@
     </div>
   </section>
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright:
     <a class="text-reset fw-bold" href="/"><img src="/storage/assets/logo2.png" alt="" width="110px"></a>
+    © 2021 BucinDev Team
   </div>
 </footer>
 

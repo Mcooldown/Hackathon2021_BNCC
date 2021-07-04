@@ -30,6 +30,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/term',[HomeController::class,'term'])->name('term');
+Route::get('/about',[HomeController::class,'about'])->name('about');
 
 //covid
 Route::get('/covidinfo', [HomeController::class, 'covidinfo'])->name('covidinfo');
