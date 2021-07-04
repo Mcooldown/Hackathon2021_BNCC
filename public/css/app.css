@@ -17934,6 +17934,10 @@ footer {
   display: inline-block;
 }
 
+.c-carousel-btn {
+  margin-bottom: 100px;
+}
+
 body, html {
   margin: 0;
   padding: 0;
