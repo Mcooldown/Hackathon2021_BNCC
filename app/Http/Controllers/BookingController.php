@@ -32,14 +32,29 @@ class BookingController extends Controller
 
     public function store()
     {
+        if (auth()->user()->role == 'OTA') {
+
+            request()->validate([
+                'user_id' => 'required|integer',
+            ]);
+
+            $userId = request('user_id');
+        } else {
+            $userId = auth()->user()->id;
+        }
+
         Booking::create([
-            'user_id' => auth()->user()->id,
+            'user_id' => $userId,
             'room_id' => request('room_id'),
             'quantity' => request('quantity'),
             'check_in' => request('check_in'),
             'check_out' => request('check_out'),
         ]);
 
-        return redirect()->route('bookings.index')->with('success', 'Booking created');
+        if (auth()->user()->role == 'OTA') {
+            return redirect()->route('bookings.index')->with('success', 'Booking created');
+        } else {
+            return redirect()->route('bookings.index')->with('success', 'Booking created');
+        }
     }
 }

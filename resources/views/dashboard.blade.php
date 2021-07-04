@@ -2,7 +2,7 @@
 
 @section('title', 'Dashboard - NginepKuy')
 @section('content')
-    <div class="container my-5">
+    <div class="container my-5 pb-5">
         <div class="row">
             <div class="col-md-3">
                 @include('include.sidebar')

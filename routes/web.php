@@ -33,8 +33,8 @@ Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard'
 Route::get('/accomodations', [AccomodationController::class, 'index'])->name('accomodations.index');
 Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);
 Route::post('/accomodations/createAccomodation', [AccomodationController::class, 'store'])->name('storeAccomodation');
-Route::get('/accomodations/show',[AccomodationController::class,'show'])->name('accomodation.show');
-Route::get('/accomodations/delete{id}',[AccomodationController::class,'delete'])->name('accomodation.delete');
+Route::get('/accomodations/show', [AccomodationController::class, 'show'])->name('accomodation.show');
+Route::get('/accomodations/delete{id}', [AccomodationController::class, 'delete'])->name('accomodation.delete');
 
 //Room
 Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
@@ -66,10 +66,10 @@ Route::post('/chat-consultations', [ChatConsultationController::class, 'store'])
 Route::get('/chat-consultations-ota', [ChatConsultationController::class, 'otaIndex'])->name('chat-consultations.ota');
 
 //Rating
-Route::get('/ratings', [RatingController::class, 'index'])->name('ratings.index');
-Route::post('/ratings/createRating', [RatingController::class, 'store'])->name('storeRating');
+Route::get('/ratings/{checkout}', [RatingController::class, 'index'])->name('ratings.index');
+Route::post('/ratings', [RatingController::class, 'store'])->name('storeRating');
 
 
 //profile
-Route::get('/profile', [UserController::class, 'index'])->name('profile');
+Route::get('/profile/', [UserController::class, 'index'])->name('profile');
 Route::PUT('/profile/{id}', [UserController::class, 'update'])->name('profile.update');

@@ -4,7 +4,7 @@
 @section('content')
     <div class="container py-5 mb-5">
         <a class="btn btn-hijau btn-lg rounded-pill"
-            href="{{ route('rooms.index', ['qty' => $qty, 'accomodation_id' => $room->accomodation->id, 'check_in' => strtotime($check_in), 'check_out' => strtotime($check_out)]) }}">Back
+            href="{{ route('rooms.index', ['qty' => $qty, 'accomodation_id' => $room->accomodation->id, 'check_in' => strtotime($check_in), 'check_out' => strtotime($check_out), 'place' => $_GET['place']]) }}">Back
             to rooms</a>
         <form action="{{ route('bookings.store') }}" method="POST">
             @csrf
@@ -38,7 +38,11 @@
                                 per room
                             </p>
                         </div>
-                        <div class="col-md-2 my-2 text-center">
+                        <div class="col-md-2 my-2">
+                            @if (auth()->user()->role == 'OTA')
+                                <label for="user_id">User ID:</label>
+                                <input type="number" class="form-control rounded-pill" name="user_id" style="width: 150px;">
+                            @endif
                             <button type="submit" class="btn btn-hijau btn-lg rounded-pill px-4 mt-3">Book Now</button>
                         </div>
                     </div>
