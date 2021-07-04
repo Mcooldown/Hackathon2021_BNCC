@@ -29,6 +29,10 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
+//covid
+Route::get('/covidinfo', [HomeController::class, 'covidinfo'])->name('covidinfo');
+Route::get('/covidnews', [HomeController::class, 'covidnews'])->name('covidnews');
+
 // Accomodations
 Route::get('/accomodations', [AccomodationController::class, 'index'])->name('accomodations.index');
 Route::get('/accomodations/create', [AccomodationController::class, 'indexCreate']);
@@ -73,3 +77,4 @@ Route::post('/ratings/createRating', [RatingController::class, 'store'])->name('
 //profile
 Route::get('/profile', [UserController::class, 'index'])->name('profile');
 Route::PUT('/profile/{id}', [UserController::class, 'update'])->name('profile.update');
+
