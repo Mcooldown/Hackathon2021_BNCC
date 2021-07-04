@@ -24,27 +24,27 @@
             </tr>
             @endforeach
         </table>
-        {{-- <h1>OTA Confirmation</h1>
+        <h1>OTA Confirmation</h1>
         <table class="table">
             <tr>
-                <th>Booking ID</th>
                 <th>User</th>
+                <th>OTA</th>
                 <th>Total Payment</th>
                 <th>Transfer Proof</th>
                 <th>Action</th>
             </tr>
-            @foreach ($checkouts as $checkout)
+            @foreach ($otas as $ota)
             <tr>
-                <td>{{ $checkout->booking_id }}</td>
-                <td>{{ $checkout->user->name }}</td>
-                <td>{{ $checkout->total_payment }}</td>
-                <td><img src="/storage/proof/{{ $checkout->transfer_proof }}" width="100px" alt="Transfer Proof"></td>
+                <td>{{ $ota->user->name }}</td>
+                <td>{{ $ota->ota->name }}</td>
+                <td>{{ $ota->price }}</td>
+                <td><img src="/storage/proof/{{ $ota->transfer_proof }}" width="100px" alt="Transfer Proof"></td>
                 <td>
-                    <a href="{{ route('admin.accept', $checkout->id) }}"><button type="button" class="btn btn-hijau">Accept</button></a>
-                    <a href="{{ route('admin.decline', $checkout->id) }}"><button type="button" class="btn btn-danger">Decline</button></a>
+                    <a href="{{ route('ota.accept', $ota->id) }}"><button type="button" class="btn btn-hijau">Accept</button></a>
+                    <a href="{{ route('ota.decline', $ota->id) }}"><button type="button" class="btn btn-danger">Decline</button></a>
                 </td>
             </tr>
             @endforeach
-        </table> --}}
+        </table>
     </div>
 @endsection
