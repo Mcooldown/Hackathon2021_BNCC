@@ -28,15 +28,17 @@ class AccomodationController extends Controller
             return back()->with('error', 'Check in cannot be more than Check out');
         }
 
-        if ($_GET['place'] != null) {
-            $accomodations = Accomodation::where('name', 'LIKE', '%' . request('place') . '%')->get();
+        if ($_GET['place'] != null && $_GET['city_id'] != null) {
+            $accomodations = Accomodation::where([['name', 'LIKE', '%' . $_GET['place'] . '%'], ['city_id', $_GET['city_id']]])->get();
+            $city = City::find($_GET['city_id']);
+        } else if ($_GET['place'] != null) {
+            $accomodations = Accomodation::where('name', 'LIKE', '%' . $_GET['place'] . '%')->get();
             $city = null;
-        } else {
-            if ($_GET['city_id'] == null) {
-                return back()->with('error', 'Please select the city');
-            }
+        } else if ($_GET['city_id'] != null) {
             $accomodations = Accomodation::where('city_id', $_GET['city_id'])->get();
             $city = City::find($_GET['city_id']);
+        } else {
+            return back()->with('error', 'Please input either city or place');
         }
 
         if ($accomodations->count() == 0) {

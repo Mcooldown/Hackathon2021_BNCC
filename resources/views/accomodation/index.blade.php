@@ -5,12 +5,19 @@
 
         <div class="header-accomodation">
             <div class="d-flex justify-content-between">
-                @if ($city == null)
+                @if ($_GET['place'] != null && $city != null)
+                    <h1>Search result: <span class="fw-bold text-teal">{{ $_GET['place'] }}, {{ $city->name }},
+                            {{ $city->country }}</span>
+                    </h1>
+                @elseif ($_GET['place'] != null)
                     <h1>Search result: <span class="fw-bold text-teal">{{ $_GET['place'] }}</span>
                     </h1>
-                @else
-                    <h1>Accomodation in <span class="fw-bold text-teal">{{ $city->name }}, {{ $city->country }}</span>
+                @elseif($city != null)
+                    <h1>Accomodation in <span class="fw-bold text-teal">{{ $city->name }},
+                            {{ $city->country }}</span>
                     </h1>
+                @endif
+                @if ($city != null)
                     <div class="d-flex fs-6 zone-wrap" data-toggle="tooltip" data-placement="bottom"
                         title="🟢 Safe&#013;🟡 Warning&#013;🟠 Risk&#013;🔴 Danger&#013;⚫ Hazard">
                         <h1 class="d-flex align-items-center">
