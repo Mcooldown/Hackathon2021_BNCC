@@ -25,7 +25,9 @@
                             <p class="text-muted">{{ $accomodation->address }}, {{ $accomodation->city->name }},
                                 {{ $accomodation->city->country }}
                             </p>
-                            <p data-toggle="tooltip" data-placement="bottom" title="🟢 Safe&#013;🟡 Warning&#013;🟠 Risk&#013;🔴 Danger&#013;⚫ Hazard">&nbsp;<span id="zone-color"></span></p>
+                            <p data-toggle="tooltip" data-placement="bottom"
+                                title="🟢 Safe&#013;🟡 Warning&#013;🟠 Risk&#013;🔴 Danger&#013;⚫ Hazard">&nbsp;<span
+                                    id="zone-color"></span></p>
                         </div>
                     </div>
                     <div class="col-md-2 d-flex justify-content-center">
@@ -40,12 +42,11 @@
                                 @endphp
                             @endforeach
                             @php
-                            if($ratings->count() != 0){
-                            echo $total/$ratings->count()."/5";
-                            }
-                            else {
-                            echo "4.9";
-                            }
+                                if ($ratings->count() != 0) {
+                                    echo $total / $ratings->count() . '/5';
+                                } else {
+                                    echo '4.9';
+                                }
                             @endphp
                         </h4>
                     </div>
@@ -101,8 +102,7 @@
         @endforeach
     </div>
     <script>
-
-        $(document).ready(function(){
+        $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
         });
 
@@ -133,8 +133,8 @@
                     }
                 }
             }
-            for(let i=0; i<provinsiName.length; i++){
-                if(document.getElementById("province").value == provinsiName[i]){
+            for (let i = 0; i < provinsiName.length; i++) {
+                if (document.getElementById("province").value == provinsiName[i]) {
                     console.log(provinsiName[i]);
                     document.getElementById("zone-color").style.backgroundColor = color[i];
                 }

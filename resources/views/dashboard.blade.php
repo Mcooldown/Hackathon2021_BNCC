@@ -8,7 +8,7 @@
                 @include('include.sidebar')
             </div>
             <div class="col-md-9">
-                <div class="card border-0 shadow">
+                <div class="card border-0 rounded-30 shadow">
                     <div class="card-body my-3">
                         <h3 class="fw-bold text-teal">Welcome to NginepKuy</h3>
                         <hr>

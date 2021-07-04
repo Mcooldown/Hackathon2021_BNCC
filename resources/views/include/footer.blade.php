@@ -47,20 +47,25 @@
           <h6 class="text-uppercase fw-bold mb-4">
             Media Partners
           </h6>
-          <p>
-            <a href="https://www.technoscape.id/" class="text-reset">BNCC</a>
+          <p class="d-flex align-items-center">
+            <img src="/storage/assets/technoscape.png" alt="" width="20px">
+            <a href="https://www.technoscape.id/" class="text-reset ms-2" target="_blank">Technoscape</a>
           </p>
-          <p>
-            <a href="https://www.tiket.com/" class="text-reset">Tiket.Com</a>
+          <p class="d-flex align-items-center">
+            <img src="/storage/assets/tiketcom.png" alt="" width="20px">
+            <a href="https://www.tiket.com/" class="text-reset ms-2" target="_blank">Tiket.Com</a>
           </p>
-          <p>
-            <a href="https://investree.id/" class="text-reset">Investree</a>
+          <p class="d-flex align-items-center">
+            <img src="/storage/assets/investtree.png" alt="" width="20px">
+            <a href="https://investree.id/" class="text-reset ms-2" target="_blank">Investree</a>
           </p>
-          <p>
-            <a href="https://www.niagahoster.co.id/" class="text-reset">Niagahoster</a>
+          <p class="d-flex align-items-center">
+            <img src="/storage/assets/niagahoster.png" alt="" width="20px">
+            <a href="https://www.niagahoster.co.id/" class="text-reset ms-2" target="_blank">Niagahoster</a>
           </p>
-           <p>
-            <a href="https://codex.works/" class="text-reset">Codex</a>
+           <p class="d-flex align-items-center">
+             <img src="/storage/assets/codex.png" alt="" width="20px">
+            <a href="https://codex.works/" class="text-reset ms-2" target="_blank">Codex</a>
           </p>
         </div>
 
@@ -69,16 +74,16 @@
             Useful links
           </h6>
           <p>
-            <a href="#!" class="text-reset">Pricing</a>
+            <a href="#!" class="text-reset">About Us</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Settings</a>
+            <a href="#!" class="text-reset">Travel Agent</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Orders</a>
+            <a href="#!" class="text-reset">Dashboard</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Help</a>
+            <a href="#!" class="text-reset">COVID Info</a>
           </p>
         </div>
 
