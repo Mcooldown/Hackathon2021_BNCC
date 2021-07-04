@@ -10,7 +10,7 @@ class Checkout extends Model
     use HasFactory;
 
     protected $fillable = [
-        'booking_id', 'total_payment', 'user_id', 'payment_type', 'is_success'
+        'booking_id', 'total_payment', 'user_id', 'payment_type', 'is_success', 'transfer_proof'
     ];
 
     public function booking()

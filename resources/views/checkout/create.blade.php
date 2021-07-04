@@ -57,7 +57,7 @@
                         With Bank Transfer
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body my-4 px-5">
                         <form action="{{ route('checkouts.store') }}" method="POST" enctype="multipart/form-data">

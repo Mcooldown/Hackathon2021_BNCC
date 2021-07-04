@@ -6,6 +6,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CheckoutController;
 
 use App\Http\Controllers\AccomodationController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChatConsultationController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\HomeController;
@@ -75,3 +76,7 @@ Route::post('/ratings/createRating', [RatingController::class, 'store'])->name('
 Route::get('/profile', [UserController::class, 'index'])->name('profile');
 Route::PUT('/profile/{id}', [UserController::class, 'update'])->name('profile.update');
 
+//admin
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin/accept/{id}', [AdminController::class, 'accept'])->name('admin.accept');
+Route::get('/admin/decline/{id}', [AdminController::class, 'decline'])->name('admin.decline');
