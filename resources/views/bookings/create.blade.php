@@ -2,7 +2,10 @@
 
 @section('title', 'Bookings - NginepKuy')
 @section('content')
-    <div class="container py-5 my-5">
+    <div class="container py-5 mb-5">
+        <a class="btn btn-hijau btn-lg rounded-pill"
+            href="{{ route('rooms.index', ['qty' => $qty, 'accomodation_id' => $room->accomodation->id, 'check_in' => $check_in, 'check_out' => $check_out]) }}">Back
+            to accomodations</a>
         <form action="{{ route('bookings.store') }}" method="POST">
             @csrf
             <input type="hidden" name="room_id" value="{{ $_GET['room_id'] }}">
