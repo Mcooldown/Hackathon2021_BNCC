@@ -63,11 +63,18 @@
                     <div class="col-md-6 d-flex justify-content-end my-2 text-end">
                         Total Room Price: Rp{{ number_format($booking->room->price * $booking->quantity * $day) }} <br>
                         Total Health Protocol Fee:
-                        Rp{{ number_format($booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition)}}
-
+                        @if($booking->packet!=NULL)
+                            Rp{{ number_format($booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition)}}
+                        @else
+                            Rp{{ number_format($booking->room->accomodation->health_protocol_fee * $booking->quantity)}}
+                        @endif
                         <br> <br>
                         Total Price:
-                        Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition) }}
+                        @if($booking->packet!=NULL)
+                            Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition) }}
+                        @else
+                            Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity) }}
+                        @endif
                     </div>
                 </div>
             </div>
@@ -92,9 +99,17 @@
                             <input type="hidden" name="day" value="{{ $day }}">
                             <input type="hidden" name="payment_type" value="BNK">
                             <p>Total Payment:
-                                Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity +$addition) }}
+                                @if($booking->packet!=NULL)
+                                    Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity +$addition) }}
+                                @else
+                                    Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity)}}
+                                @endif
                             </p>
-                            <input type="hidden" name="addition" value="{{ $addition }}">
+                            @if($booking->packet!=NULL)
+                                <input type="hidden" name="addition" value="{{ $addition }}">
+                            @else
+                                <input type="hidden" name="addition" value="0">
+                            @endif
                             <p>Please transfer to: 3892478923xxxx a/n Brian</p>
                             <hr>
                             <label for="transfer_proof">Upload your transfer proof
@@ -126,17 +141,36 @@
                             <input type="hidden" name="booking_id" value="{{ $booking->id }}">
                             <input type="hidden" name="day" value="{{ $day }}">
                             <input type="hidden" name="payment_type" value="BAL">
-                            <input type="hidden" name="addition" value="{{ $addition }}">
+                            @if($booking->packet!=NULL)
+                                <input type="hidden" name="addition" value="{{ $addition }}">
+                            @else
+                                <input type="hidden" name="addition" value="0">
+                            @endif
                             <p>Your Balance: Rp{{ auth()->user()->balance }}</p>
                             <p>Total Payment:
-                                Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition)}}
+                                @if($booking->packet!=NULL)
+                                    Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition)}}
+                                @else
+                                    Rp{{ number_format($booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity )}}
+                                @endif
+
+
                             </p>
                             <div class="d-flex justify-content-end">
-                                @if (auth()->user()->balance < $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition)
-                                    <h5 class="fw-bold text-danger">Not enough balance</h5>
+                                @if($booking->packet!=NULL)
+                                    @if (auth()->user()->balance < $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity + $addition)
+                                        <h5 class="fw-bold text-danger">Not enough balance</h5>
+                                    @else
+                                        <button type="submit" class="btn btn-hijau px-4 rounded-pill">Checkout with your
+                                            balance</button>
+                                    @endif
                                 @else
-                                    <button type="submit" class="btn btn-hijau px-4 rounded-pill">Checkout with your
-                                        balance</button>
+                                    @if (auth()->user()->balance < $booking->room->price * $booking->quantity * $day + $booking->room->accomodation->health_protocol_fee * $booking->quantity)
+                                        <h5 class="fw-bold text-danger">Not enough balance</h5>
+                                    @else
+                                        <button type="submit" class="btn btn-hijau px-4 rounded-pill">Checkout with your
+                                            balance</button>
+                                    @endif
                                 @endif
                             </div>
                         </form>

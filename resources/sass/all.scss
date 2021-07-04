@@ -172,6 +172,38 @@ footer {
     border: none;
 }
 
+.show-more-submit {
+    text-align: center;
+    color: white;
+    width: 126px;
+    height: 46px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #00e2a7 !important;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    padding: 8px 4px 0 4px;
+}
+
+.show-more-submit:hover{
+    text-align: center;
+    color: white;
+    width: 128px;
+    height: 48px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #00e2a7 !important;
+    border-radius: 20px;
+    border: none;
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 8px 4px 0 4px;
+}
+
+
+
+
 .login-home-submit {
     color: white !important;
     width: 90px;

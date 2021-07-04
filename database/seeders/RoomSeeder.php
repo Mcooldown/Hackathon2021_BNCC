@@ -34,7 +34,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 2,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Full AC'
@@ -50,7 +50,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 4,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Cheap and safe'
@@ -84,7 +84,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 6,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Cheap and safe'
@@ -126,26 +126,24 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 11,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 450000,
                 'description' => 'Cheap and safe'
             ],
             [
                 'accomodation_id' => 12,
-                'type' => 'Superior',
-                'photo' => 'superior_1.jpg',
+                'type' => 'Standard',
+                'photo' => 'standard_1.jpg',
                 'slot' => 100,
                 'price' => 250000,
                 'description' => 'Full services'
             ]
-
-            //===============================
             ,
             [
                 'accomodation_id' => 3,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Full AC'
@@ -161,7 +159,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 5,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Cheap and safe'
@@ -193,7 +191,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 9,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Cheap and safe'
@@ -233,7 +231,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 3,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 450000,
                 'description' => 'Cheap and safe'
@@ -246,12 +244,11 @@ class RoomSeeder extends Seeder
                 'price' => 250000,
                 'description' => 'Full services'
             ]
-            //===============================
             ,
             [
                 'accomodation_id' => 13,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Full AC'
@@ -267,7 +264,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 15,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Cheap and safe'
@@ -299,7 +296,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 19,
                 'type' => 'Luxury',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Luxury and Comfy'
@@ -339,7 +336,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 15,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 450000,
                 'description' => 'Cheap and safe'
@@ -363,7 +360,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 18,
                 'type' => 'Luxury',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Full AC'
@@ -387,7 +384,7 @@ class RoomSeeder extends Seeder
             [
                 'accomodation_id' => 21,
                 'type' => 'Standard',
-                'photo' => 'standard_2.jpg',
+                'photo' => 'standard_1.jpg',
                 'slot' => 300,
                 'price' => 500000,
                 'description' => 'Full AC'
